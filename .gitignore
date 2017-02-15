@@ -1,0 +1,16 @@
+# ================== SYSTEM FILES ====================
+.DS_Store
+# ================== BUILD ====================
+test_build
+deploy_build
+# ================== NODE ====================
+node_modules
+package.json
+gulpfile.js
+# ================== FIREBASE =================
+.firebaserc
+database.rules.json
+Firebase
+firebase.json
+Initialize
+src/js/app.js
