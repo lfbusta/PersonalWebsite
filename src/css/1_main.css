@@ -6,7 +6,7 @@
 
     font-family: sans-serif;
 
-    color: rgb(255, 255, 255);
+    color: var(--color-background1);
     /*background-color: rgba(0, 0, 0, 0.25);*/
 }
 /* ==================================== VARIABLES ===================================== */
@@ -29,11 +29,14 @@ body{
     display: flex;
     flex-direction: column;
     width: 100vw;
+    scroll-behavior: smooth;
 }
 h1{}
 h2{}
 h3{}
-p{}
+p{
+    text-align: justify;
+}
 a{
     text-decoration: none;
     font-weight: bold;
@@ -69,7 +72,7 @@ footer{
     width: 100%;
     top: 0;
     height: 15vh;
-    z-index: 1;
+    z-index: 10;
 }
 .menu{
     position: relative;
@@ -88,48 +91,109 @@ footer{
     box-shadow: 0 0 4vw white;
 }
 .horContainer1{
+    position: relative;
     display: flex;
     flex: 1;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    width: 90%;
     overflow: hidden;
-    padding: 5vmin 0 5vmin 0;
+    padding: 5% 5% 5% 5%;
 
     background-color: none;
 }
-.horContainer1 img{
-    width: 90%;
+.horContainer1 > .screenshotContainer{
+    width: 95%;
 }
 .horContainer2{
+    position: relative;
     display: flex;
     flex: 1;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    width: 90%;
     overflow: hidden;
-    padding: 5vmin 0 5vmin 0;
+    padding: 5% 5% 5% 5%;
 
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin black;
 }
-.horContainer2 img{
-    width: 92%;
+.horContainer2 > .screenshotContainer{
+    width: 100%;
 }
 .screenshotContainer{
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
     overflow: hidden;
+
+    /*background-color: red;*/
+}
+.imgScreenshot{
+    width: 100%;
+    padding: 10% 0 10% 0;
+    /*object-fit: contain;*/
 }
 .descriptionContainer{
-    margin: 0 1vmin 0 1vmin;
+    position: absolute;
+    width: 90%;
+    height: 65%;
+    padding: 5% 5% 5% 5%;
+    /*z-index: 1;*/
+
+    background-color: rgba(255,255,255,0.25);
+    opacity: 0;
 }
-.hidden{
-    display: none;
-    visibility: hidden;
+.frontScreen{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 90%;
+    height: 65%;
+    padding: 5% 5% 5% 5%;
+    z-index: 1;
+
+    /*background-color: rgba(255,0,0,0.5);*/
+    opacity: 0;
 }
-.imgScreenshot:hover{
-    filter: blur(4px);
+
+.fade{
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.unfade{
+    animation-name: unfade;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;;
+}
+.blur{
+    animation-name: blur;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.unblur{
+    animation-name: unblur;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 /* ------------------------------------ section 1 ------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
@@ -150,3 +214,20 @@ footer{
 
 /* =================================== ANIMATIONS ===================================== */
 /* ==================================================================================== */
+
+@keyframes blur {
+    0%{ filter: blur(0); }
+    100%{ filter: blur(8px); }
+}
+@keyframes unblur {
+    0%{filter: blur(8px);}
+    100%{ filter: blur(0); }
+}
+@keyframes fade {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+@keyframes unfade {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
