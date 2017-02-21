@@ -76,25 +76,12 @@ function listener_toggleDescription(element){
     // console.log(screenshot.classList);
     // console.log(description.classList);
 }
-function listener_overrideToggleMenu(){
-    if(!menuShow){
-        showMenu()
-    }
-}
-function listener_toggleMenu(){
-    if(body.scrollTop < 0.75*header.scrollHeight){
-        if(!menuShow){
-            menuShow = true;
-            showMenu();
-        }
-    } else if(menuShow){
-        menuShow = false;
-        hideMenu();
-    }
-}
+
 function hideMenu(){
+    menuShow = false;
     for(let i=0; i<buttonMenu.length; i++){
         switch(buttonMenu[i].id){
+            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
             case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_projects","animation__hide_buttonMenu_projects"); break;
             case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_blog","animation__hide_buttonMenu_blog"); break;
             case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_about","animation__hide_buttonMenu_about"); break;
@@ -104,8 +91,10 @@ function hideMenu(){
     console.log("Menu: Hidden");
 }
 function showMenu(){
+    menuShow = true;
     for(let i=0; i<buttonMenu.length; i++){
         switch(buttonMenu[i].id){
+            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
             case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_projects","animation__show_buttonMenu_projects"); break;
             case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_blog","animation__show_buttonMenu_blog"); break;
             case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_about","animation__show_buttonMenu_about"); break;
@@ -113,6 +102,20 @@ function showMenu(){
         }
     }
     console.log("Menu: Visible");
+}
+function listener_toggleMenu(){
+    if(body.scrollTop < 0.75*header.scrollHeight){
+        if(!menuShow){
+            showMenu();
+        }
+    } else if(menuShow){
+        hideMenu();
+    }
+}
+function listener_overrideToggleMenu(){
+    if(!menuShow){
+        showMenu()
+    }
 }
 // ==================================== LISTENERS =======================================
 // ======================================================================================
