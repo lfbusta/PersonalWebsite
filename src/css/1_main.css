@@ -28,6 +28,7 @@ html{
     justify-content: center;
     background-color: var(--color-background1);
 }
+header{}
 body{
     display: flex;
     flex-direction: column;
@@ -43,6 +44,9 @@ p{
 a{
     text-decoration: none;
     font-weight: bold;
+}
+button{
+    outline: none;
 }
 footer{
     display: flex;
@@ -63,59 +67,65 @@ footer{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: red;
-
-    height:15vh;
+    height:30vmin;
+    background-color: var(--color-background2);
+    box-shadow: 0 1vmin 5vmin black;
 }
 .containerMenu{
     position:fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
     width: 100%;
-    top: 0;
-    height: 15vh;
+    height: 30vmin;
     z-index: 10;
+
+    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 .menu{
     position: relative;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    width: 100vw;
+    /*justify-content: space-around;*/
+    align-items: center;
+    width: 100%;
 
     visibility: visible;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 .buttonMenu{
+    position: absolute;
     border: none;
-    height: 20vw;
-    width: 20vw;
-    border-radius: 50vw;
-    box-shadow: 0 0 4vw white;
+    height: 16vmin;
+    width: 16vmin;
+    margin: 0 6vmin 0 6vmin;
+    border-radius: 50vmin;
+    box-shadow: 0 0 5vmin var(--color-text3);
+    box-shadow: 0 1vmin 2vmin black;
+
+    font-size: 10vmin;
+    background-color: var(--color-text3);
 }
-.horContainer1{
+
+.horContainer{
     position: relative;
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
-    width: 90%;
     overflow: hidden;
+}
+.horContainer1{
+    display: flex;
+    justify-content: center;
     padding: 5% 5% 5% 5%;
-
     background-color: none;
 }
 .horContainer1 > .screenshotContainer{
     width: 95%;
 }
 .horContainer2{
-    position: relative;
     display: flex;
-    flex: 1;
     justify-content: center;
-    align-items: center;
-    width: 90%;
-    overflow: hidden;
     padding: 5% 5% 5% 5%;
 
     background-color: var(--color-background2);
@@ -135,8 +145,6 @@ footer{
 }
 .imgScreenshot{
     width: 100%;
-    /*padding: 10% 0 10% 0;*/
-    /*object-fit: contain;*/
 }
 .descriptionContainer{
     position: absolute;
@@ -165,41 +173,11 @@ footer{
     opacity: 0;
 }
 
-.fade{
-    animation-name: fade;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.hidden{
+    visibility: hidden;
 }
-.unfade{
-    animation-name: unfade;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;;
-}
-.blur{
-    animation-name: blur;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-.unblur{
-    animation-name: unblur;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.removed{
+    display: none;
 }
 /* ------------------------------------ section 1 ------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
@@ -217,10 +195,204 @@ footer{
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
+#buttonMenu_stack{
+    background-color: var(--color-text2);
+}
 
 /* =================================== ANIMATIONS ===================================== */
 /* ==================================================================================== */
 
+/* --------------------------------------- menu --------------------------------------- */
+/* ------------------------------------------------------------------------------------ */
+
+@keyframes shrink_buttonMenu {
+    0%{
+        width: 20vmin;
+        height: 20vmin;
+        margin: 0 4vmin 0 4vmin;
+    }
+    100%{
+        width: 16vmin;
+        height: 16vmin;
+        margin: 0 6vmin 0 6vmin;
+    }
+}
+@keyframes unshrink_buttonMenu {
+    0%{
+        width: 16vmin;
+        height: 16vmin;
+        margin: 0 6vmin 0 6vmin;
+    }
+    100%{
+        width: 20vmin;
+        height: 20vmin;
+        margin: 0 4vmin 0 4vmin;
+    }
+}
+@keyframes hide_buttonMenu_projects {
+    0%{
+        left: 0;
+        opacity: 1;
+    }
+    100%{
+        left: 0;
+        opacity: 0;
+    }
+}
+@keyframes show_buttonMenu_projects {
+    0%{
+        left: 0;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes hide_buttonMenu_blog {
+    0%{
+        left: 24vmin;
+        opacity: 1;
+    }
+    100%{
+        left: 0;
+        opacity: 0;
+    }
+}
+@keyframes show_buttonMenu_blog {
+    0%{
+        left: 0;
+        opacity: 0;
+    }
+    100%{
+        left: 24vmin;
+        opacity: 1;
+    }
+}
+@keyframes hide_buttonMenu_about {
+    0%{
+        left: 48vmin;
+        opacity: 1;
+    }
+    100%{
+        left: 0;
+        opacity: 0;
+    }
+}
+@keyframes show_buttonMenu_about {
+    0%{
+        left: 0;
+        opacity: 0;
+    }
+    100%{
+        left: 48vmin;
+        opacity: 1;
+    }
+}
+@keyframes hide_buttonMenu_connect {
+    0%{
+        left: 72vmin;
+        opacity: 1;
+    }
+    100%{
+        left: 0;
+        opacity: 0;
+    }
+}
+@keyframes show_buttonMenu_connect {
+    0%{
+        left: 0;
+        opacity: 0;
+    }
+    100%{
+        left: 72vmin;
+        opacity: 1;
+    }
+}
+
+.animation__hide_buttonMenu_projects{
+    left: 0;
+    animation-name: shrink_buttonMenu, hide_buttonMenu_projects;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0s,0.25s;
+    animation-direction: normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__show_buttonMenu_projects{
+    left: 0;
+    animation-name: unshrink_buttonMenu, show_buttonMenu_projects;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0.5s,0s;
+    animation-direction:normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__hide_buttonMenu_blog{
+    left: 24vmin;
+    animation-name: shrink_buttonMenu, hide_buttonMenu_blog;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0s,0.25s;
+    animation-direction: normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__show_buttonMenu_blog{
+    left: 0;
+    animation-name: unshrink_buttonMenu, show_buttonMenu_blog;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0.5s,0s;
+    animation-direction:normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__hide_buttonMenu_about{
+    left: 48vmin;
+    animation-name: shrink_buttonMenu, hide_buttonMenu_about;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0s,0.25s;
+    animation-direction: normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__show_buttonMenu_about{
+    left: 0;
+    animation-name: unshrink_buttonMenu, show_buttonMenu_about;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0.5s,0s;
+    animation-direction:normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__hide_buttonMenu_connect{
+    left: 72vmin;
+    animation-name: shrink_buttonMenu, hide_buttonMenu_connect;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0s,0.25s;
+    animation-direction: normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+.animation__show_buttonMenu_connect{
+    left: 0;
+    animation-name: unshrink_buttonMenu, show_buttonMenu_connect;
+    animation-duration: 0.25s,0.5s;
+    animation-timing-function: ease,ease;
+    animation-delay: 0.5s,0s;
+    animation-direction:normal,normal;
+    animation-iteration-count: 1,1;
+    animation-fill-mode: forwards,forwards;
+}
+
+/* -------------------------------- item description ---------------------------------- */
+/* ------------------------------------------------------------------------------------ */
 @keyframes blur {
     0%{ filter: blur(0); }
     100%{ filter: blur(8px); }
@@ -236,4 +408,41 @@ footer{
 @keyframes unfade {
     0%{ opacity: 0; }
     100%{ opacity: 1; }
+}
+
+.animation_fade{
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.animation_unfade{
+    animation-name: unfade;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;;
+}
+.animation_blur{
+    animation-name: blur;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.animation_unblur{
+    animation-name: unblur;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
