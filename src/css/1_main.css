@@ -6,17 +6,20 @@
 
     font-family: sans-serif;
 
-    color: var(--color-background1);
+    color: var(--color-text0_90);
     /*background-color: rgba(0, 0, 0, 0.25);*/
 }
 /* ==================================== VARIABLES ===================================== */
 /* ==================================================================================== */
 :root{
    --color-background1: rgb(8, 42, 74);
+   --color-background1_50: rgba(8, 42, 74,0.5);
    --color-background2: rgb(37, 96, 125);
+   --color-text0_90: rgba(255, 255, 255,0.9);
    --color-text1: rgb(254, 241, 206);
    --color-text2: rgb(240, 145, 51);
    --color-text3: rgb(214, 72, 46);
+   --color-text3_50: rgba(214, 72, 46,0.5);
 }
 /* ===================================== ELEMENTS ===================================== */
 /* ==================================================================================== */
@@ -132,17 +135,20 @@ footer{
 }
 .imgScreenshot{
     width: 100%;
-    padding: 10% 0 10% 0;
+    /*padding: 10% 0 10% 0;*/
     /*object-fit: contain;*/
 }
 .descriptionContainer{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 90%;
-    height: 65%;
+    height: 90%;
     padding: 5% 5% 5% 5%;
     /*z-index: 1;*/
 
-    background-color: rgba(255,255,255,0.25);
+    background-color: var(--color-background1_50);
     opacity: 0;
 }
 .frontScreen{
