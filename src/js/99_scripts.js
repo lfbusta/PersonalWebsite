@@ -33,12 +33,46 @@ const buttonMenu_stack = document.getElementById("buttonMenu_stack");
 // ======================================================================================
 
 if(mq.matches){
-    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.4 });
+    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
+    sr.reveal('.horContainer');
 } else{
-    window.sr = ScrollReveal({ distance: '40vmax', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 0.5 });
-}
+    window.sr = ScrollReveal();
+    let slideFromLeft = {
+        origin: "left",
+        distance: "100vw",
+        duration: 500,
+        delay: 0,
+        opacity: 0,
+        scale: 1,
+        reset: true,
+        viewFactor: 1.2
+    };
+    let slideFromRight = {
+        origin: "tight",
+        distance: "100vw",
+        duration: 500,
+        delay: 0,
+        opacity: 0,
+        scale: 1,
+        reset: true,
+        viewFactor: 1.2
+    };
 
-sr.reveal('.horContainer');
+    const horContainer1s = document.getElementsByClassName("horContainer1");
+    for(let i=0; i<horContainer1s.length; i++){
+        horContainer1s[i].getElementsByClassName('imgScreenshot')[0].classList.add("slideFromLeft");
+        horContainer1s[i].getElementsByClassName('description')[0].classList.add("slideFromRight");
+        // console.log(horContainer1s[i].getElementsByClassName('imgScreenshot')[0].classList);
+        // console.log(horContainer1s[i].getElementsByClassName('description')[0].classList);
+    }
+    const horContainer2s = document.getElementsByClassName("horContainer2");
+    for(let i=0; i<horContainer2s.length; i++){
+        horContainer2s[i].getElementsByClassName('imgScreenshot')[0].classList.add("slideFromRight");
+        horContainer2s[i].getElementsByClassName('description')[0].classList.add("slideFromLeft");
+    }
+    sr.reveal(".slideFromLeft",slideFromLeft);
+    sr.reveal(".slideFromRight",slideFromRight);
+}
 
 // ==================================== FUNCTIONS =======================================
 // ======================================================================================
@@ -55,16 +89,6 @@ function replaceClass(classList,className1,className2){
 function listener_toggleDescription(element){
     let screenshot = element.target.parentNode.getElementsByClassName("imgScreenshot")[0];
     let description = element.target.parentNode.getElementsByClassName("descriptionContainer")[0];
-    // let screenshot = elements[0];
-    // let description = elements[0];
-    // for(let i=0; i<elements.length; i++){
-    //     if(hasClass(elements[i],"imgScreenshot")){
-    //         screenshot = elements[i];
-    //     }
-    //     if(hasClass(elements[i],"descriptionContainer")){
-    //         description = elements[i];
-    //     }
-    // }
     if(hasClass(element.target,"descriptionShow")){ //Fade description out, blur screenshot out.
         element.target.classList.remove("descriptionShow");
         element.target.classList.remove("animation_unfade");
@@ -82,8 +106,6 @@ function listener_toggleDescription(element){
         description.classList.add("animation_unfade");
         description.classList.remove("animation_fade");
     }
-    // console.log(screenshot.classList);
-    // console.log(description.classList);
 }
 
 function hideMenu(){
