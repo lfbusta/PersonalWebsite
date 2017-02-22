@@ -88,7 +88,6 @@ function hideMenu(){
             case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_connect","animation__hide_buttonMenu_connect"); break;
         }
     }
-    console.log("Menu: Hidden");
 }
 function showMenu(){
     menuShow = true;
@@ -101,7 +100,6 @@ function showMenu(){
             case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_connect","animation__show_buttonMenu_connect"); break;
         }
     }
-    console.log("Menu: Visible");
 }
 function listener_toggleMenu(){
     if(body.scrollTop < 0.75*header.scrollHeight){

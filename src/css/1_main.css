@@ -94,6 +94,7 @@ footer{
 }
 .buttonMenu{
     position: absolute;
+    margin: 0 4vmin 0 4vmin;
     border-radius: 50vmin;
     box-shadow: 0 1vmin 2vmin rgba(0,0,0,0.75);
 
@@ -193,10 +194,7 @@ footer{
 /* ================================== INTERCATIONS ==================================== */
 /* ==================================================================================== */
 
-.buttonMenu:active{
-    /*top: 6vmin;*/
-    box-shadow: none;
-}
+.buttonMenu:active{ box-shadow: none; }
 
 /* =================================== ANIMATIONS ===================================== */
 /* ==================================================================================== */
@@ -208,7 +206,7 @@ footer{
     0%{
         width: 20vmin;
         height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
+        left: 0 4vmin 0 4vmin;
     }
     25%{
         width: 20vmin;
@@ -266,59 +264,53 @@ footer{
 }
 @keyframes hide_buttonMenu_stack {
     0%{
-        left: 0;
+        left: 38vmin;
         width: 16vmin;
         height: 16vmin;
-        margin: 0 6vmin 0 6vmin;
         opacity: 1;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         width: 20vmin;
         height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         width: 20vmin;
         height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
         opacity: 1;
     }
     100%{
-        left: 12vmin;
-        width: 2vmin;
-        height: 2vmin;
+        left: 46vmin;
+        width: 0;
+        height: 0;
         opacity: 0;
     }
 }
 @keyframes show_buttonMenu_stack {
     0%{
-        left: 14vmin;
-        width: 2vmin;
-        height: 2vmin;
+        left: 46vmin;
+        width: 0;
+        height: 0;
         opacity: 0;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         width: 20vmin;
         height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         width: 20vmin;
         height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
         opacity: 1;
     }
     100%{
-        left: 0;
+        left: 38vmin;
         width: 16vmin;
         height: 16vmin;
-        margin: 0 6vmin 0 6vmin;
         opacity: 1;
     }
 }
@@ -336,21 +328,21 @@ footer{
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     100%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
 }
 @keyframes show_buttonMenu_projects {
     0%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     50%{
@@ -380,21 +372,21 @@ footer{
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     100%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
 }
 @keyframes show_buttonMenu_blog {
     0%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     50%{
@@ -424,21 +416,21 @@ footer{
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     100%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
 }
 @keyframes show_buttonMenu_about {
     0%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     50%{
@@ -468,21 +460,21 @@ footer{
         opacity: 1;
     }
     75%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     100%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
 }
 @keyframes show_buttonMenu_connect {
     0%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     25%{
-        left: 0;
+        left: 36vmin;
         opacity: 0;
     }
     50%{
