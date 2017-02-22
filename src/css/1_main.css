@@ -94,16 +94,10 @@ footer{
 }
 .buttonMenu{
     position: absolute;
-    border: none;
-    height: 16vmin;
-    width: 16vmin;
-    margin: 0 6vmin 0 6vmin;
     border-radius: 50vmin;
-    box-shadow: 0 0 5vmin var(--color-text3);
-    box-shadow: 0 1vmin 2vmin black;
+    box-shadow: 0 1vmin 2vmin rgba(0,0,0,0.75);
 
-    font-size: 10vmin;
-    background-color: var(--color-text3);
+    transition: box-shadow 0.25s ease;
 }
 
 .horContainer{
@@ -195,8 +189,13 @@ footer{
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
-#buttonMenu_stack{
-    background-color: var(--color-text2);
+
+/* ================================== INTERCATIONS ==================================== */
+/* ==================================================================================== */
+
+.buttonMenu:active{
+    /*top: 6vmin;*/
+    box-shadow: none;
 }
 
 /* =================================== ANIMATIONS ===================================== */
@@ -220,16 +219,19 @@ footer{
         width: 16vmin;
         height: 16vmin;
         margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
     75%{
         width: 16vmin;
         height: 16vmin;
         margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
     100%{
         width: 16vmin;
         height: 16vmin;
         margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
 }
 @keyframes unshrink_buttonMenu {
@@ -237,16 +239,19 @@ footer{
         width: 16vmin;
         height: 16vmin;
         margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
     25%{
         width: 16vmin;
         height: 16vmin;
         margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
     50%{
-        width: 20vmin;
-        height: 20vmin;
-        margin: 0 4vmin 0 4vmin;
+        width: 16vmin;
+        height: 16vmin;
+        margin: 0 6vmin 0 6vmin;
+        box-shadow: none;
     }
     75%{
         width: 20vmin;
@@ -282,7 +287,7 @@ footer{
         opacity: 1;
     }
     100%{
-        left: 7vmin;
+        left: 12vmin;
         width: 2vmin;
         height: 2vmin;
         opacity: 0;
@@ -290,7 +295,7 @@ footer{
 }
 @keyframes show_buttonMenu_stack {
     0%{
-        left: 7vmin;
+        left: 14vmin;
         width: 2vmin;
         height: 2vmin;
         opacity: 0;
@@ -350,7 +355,7 @@ footer{
     }
     50%{
         left: 0;
-        opacity: 0;
+        opacity: 1;
     }
     75%{
         left: 0;
@@ -393,8 +398,8 @@ footer{
         opacity: 0;
     }
     50%{
-        left: 0;
-        opacity: 0;
+        left: 24vmin;
+        opacity: 1;
     }
     75%{
         left: 24vmin;
@@ -437,8 +442,8 @@ footer{
         opacity: 0;
     }
     50%{
-        left: 0;
-        opacity: 0;
+        left: 48vmin;
+        opacity: 1;
     }
     75%{
         left: 48vmin;
@@ -481,8 +486,8 @@ footer{
         opacity: 0;
     }
     50%{
-        left: 0;
-        opacity: 0;
+        left: 72vmin;
+        opacity: 1;
     }
     75%{
         left: 72vmin;
@@ -497,7 +502,7 @@ footer{
 .animation__hide_buttonMenu_stack{
     animation-name: hide_buttonMenu_stack;
     animation-duration: 1s;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-direction: normal;
     animation-iteration-count: 1;
@@ -506,7 +511,7 @@ footer{
 .animation__show_buttonMenu_stack{
     animation-name: show_buttonMenu_stack;
     animation-duration: 1s;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-direction: normal;
     animation-iteration-count: 1;
