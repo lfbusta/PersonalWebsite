@@ -24,7 +24,7 @@ sr.reveal('.screenshotContainer');
 let menuShow = true;
 const body = document.getElementsByTagName("body")[0];
 
-const header = document.getElementsByTagName("header")[0];
+const spacerMenu = document.getElementsByClassName("spacerMenu")[0];
 
 const screenshotContainers = document.getElementsByClassName("screenshotContainer");
 const screenshots = document.getElementsByClassName("imgScreenshot");
@@ -102,7 +102,7 @@ function showMenu(){
     }
 }
 function listener_toggleMenu(){
-    if(body.scrollTop < 0.75*header.scrollHeight){
+    if(body.scrollTop < 0.75*spacerMenu.scrollHeight){
         if(!menuShow){
             showMenu();
         }

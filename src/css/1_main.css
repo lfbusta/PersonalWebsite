@@ -20,6 +20,7 @@
    --color-text2: rgb(240, 145, 51);
    --color-text3: rgb(214, 72, 46);
    --color-text3_50: rgba(214, 72, 46,0.5);
+   --color-shadow: rgba(0, 0, 0, 0.5);
 }
 /* ===================================== ELEMENTS ===================================== */
 /* ==================================================================================== */
@@ -28,7 +29,15 @@ html{
     justify-content: center;
     background-color: var(--color-background1);
 }
-header{}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-background2);
+    box-shadow: 0 1vmin 5vmin var(--color-shadow);
+}
+nav{}
 body{
     display: flex;
     flex-direction: column;
@@ -47,87 +56,61 @@ a{
 }
 button{
     outline: none;
+    border: none;
 }
 footer{
     display: flex;
-    justify-content: center;
     width: 100%;
-    height: 10vmin;
     overflow: hidden;
-    padding: 5vmin 0 5vmin 0;
-
     background-color: var(--color-background2);
-    box-shadow: 0 1vmin 5vmin black;
-
+    box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
 /* ===================================== CLASSES ====================================== */
 /* ==================================================================================== */
-.spacerMenu{
+
+/* ------------------------------------ section 1 ------------------------------------- */
+/* ------------------------------------------------------------------------------------ */
+
+/*.................................... subsection 1 ....................................*/
+.main{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:30vmin;
-    background-color: var(--color-background2);
-    box-shadow: 0 1vmin 5vmin black;
 }
+.spacerMenu{}
 .containerMenu{
     position:fixed;
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    width: 100%;
-    height: 30vmin;
-    z-index: 10;
-
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-}
-.menu{
-    position: relative;
-    display: flex;
-    /*justify-content: space-around;*/
     align-items: center;
-    width: 100%;
-
-    visibility: visible;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
+    z-index: 10;
 }
 .buttonMenu{
     position: absolute;
     margin: 0 4vmin 0 4vmin;
     border-radius: 50vmin;
-    box-shadow: 0 1vmin 2vmin rgba(0,0,0,0.75);
+    box-shadow: 0 1vmin 2vmin var(--color-shadow);
 
     transition: box-shadow 0.25s ease;
 }
+/*.................................... subsection 2 ....................................*/
 
+/* ------------------------------------ section 2 ------------------------------------- */
+/* ------------------------------------------------------------------------------------ */
+
+/*.................................... subsection 1 ....................................*/
 .horContainer{
     position: relative;
     display: flex;
     flex: 1;
-    justify-content: center;
     align-items: center;
+    padding: 5vmin 5vmin 5vmin 5vmin;
     overflow: hidden;
 }
 .horContainer1{
-    display: flex;
-    justify-content: center;
-    padding: 5% 5% 5% 5%;
     background-color: none;
 }
-.horContainer1 > .screenshotContainer{
-    width: 95%;
-}
 .horContainer2{
-    display: flex;
-    justify-content: center;
-    padding: 5% 5% 5% 5%;
-
     background-color: var(--color-background2);
-    box-shadow: 0 1vmin 5vmin black;
-}
-.horContainer2 > .screenshotContainer{
-    width: 100%;
+    box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
 .screenshotContainer{
     position: relative;
@@ -135,58 +118,28 @@ footer{
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-
-    /*background-color: red;*/
 }
 .imgScreenshot{
     width: 100%;
 }
 .descriptionContainer{
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
-    height: 90%;
-    padding: 5% 5% 5% 5%;
-    /*z-index: 1;*/
-
-    background-color: var(--color-background1_50);
-    opacity: 0;
 }
-.frontScreen{
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 90%;
-    height: 65%;
-    padding: 5% 5% 5% 5%;
-    z-index: 1;
+/*.................................... subsection 2 ....................................*/
 
-    /*background-color: rgba(255,0,0,0.5);*/
-    opacity: 0;
-}
+/* ------------------------------------ section 3 ------------------------------------- */
+/* ------------------------------------------------------------------------------------ */
 
+/*.................................... subsection 1 ....................................*/
 .hidden{
     visibility: hidden;
 }
 .removed{
     display: none;
 }
-/* ------------------------------------ section 1 ------------------------------------- */
-/* ------------------------------------------------------------------------------------ */
-
-/*..................................... subclass 1 .....................................*/
-
-/*..................................... subclass 2 .....................................*/
-
-/* ------------------------------------ section 2 ------------------------------------- */
-/* ------------------------------------------------------------------------------------ */
-
-/*..................................... subclass 1 .....................................*/
-
-/*..................................... subclass 2 .....................................*/
+/*.................................... subsection 2 ....................................*/
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
@@ -311,7 +264,7 @@ footer{
         left: 38vmin;
         width: 16vmin;
         height: 16vmin;
-        opacity: 1;
+        opacity: 0.5;
     }
 }
 @keyframes hide_buttonMenu_projects {
