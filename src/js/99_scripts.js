@@ -33,12 +33,12 @@ const buttonMenu_stack = document.getElementById("buttonMenu_stack");
 // ======================================================================================
 
 if(mq.matches){
-    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.5 });
+    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.4 });
 } else{
     window.sr = ScrollReveal({ distance: '40vmax', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 0.5 });
 }
 
-sr.reveal('.screenshotContainer');
+sr.reveal('.horContainer');
 
 // ==================================== FUNCTIONS =======================================
 // ======================================================================================
