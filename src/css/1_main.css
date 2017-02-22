@@ -13,8 +13,9 @@
 /* ==================================================================================== */
 :root{
    --color-background1: rgb(8, 42, 74);
-   --color-background1_50: rgba(8, 42, 74,0.5);
+   --color-background1_25: rgba(8, 42, 74,0.5);
    --color-background2: rgb(37, 96, 125);
+   --color-background2_25: rgba(37, 96, 125,0.5);
    --color-text0_90: rgba(255, 255, 255,0.9);
    --color-text1: rgb(254, 241, 206);
    --color-text2: rgb(240, 145, 51);
@@ -101,9 +102,10 @@ footer{
     position: relative;
     display: flex;
     flex: 1;
+    justify-content: center;
     align-items: center;
-    padding: 5vmin 5vmin 5vmin 5vmin;
-    overflow: hidden;
+    height: 30vh;
+    padding: 2.5vh 0 2.5vh 0;
 }
 .horContainer1{
     background-color: none;
@@ -113,19 +115,16 @@ footer{
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
 .screenshotContainer{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-}
-.imgScreenshot{
-    width: 100%;
+    align-items: center;
 }
 .descriptionContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 /*.................................... subsection 2 ....................................*/
 
