@@ -14,7 +14,7 @@
     button{}
     footer{
         justify-content: center;
-        height: 5vmin;
+        height: 16vh;
     }
     /* ===================================== CLASSES ====================================== */
     /* ==================================================================================== */
@@ -27,12 +27,12 @@
         flex-direction: column;
     }
     .spacerMenu{
-        height:30vmin;
+        height:16vh;
     }
     .containerMenu{
         top: 0;
         width: 100%;
-        height: 30vmin;
+        height: 16vh;
     }
 
     /* ------------------------------------ section 2 ------------------------------------- */
@@ -40,20 +40,31 @@
     .horContainer{
         justify-content: center;
     }
+    .screenshotContainer{
+        height: 30vmax;
+    }
     .horContainer1 > .screenshotContainer{
         width: 95%;
     }
     .horContainer2 > .screenshotContainer{
         width: 100%;
     }
+    .imgScreenshot{
+        height: 90%;
+    }
     .descriptionContainer{
         position: absolute;
-        width: 90%;
-        height: 90%;
-        padding: 5% 5% 5% 5%;
-        background-color: var(--color-background1_50);
+        /*background-color: var(--color-background1_50);*/
+        /*background-color: red;*/
         opacity: 0;
     }
+    .horContainer1 > .descriptionContainer{
+        /*width: 76vmin;*/
+    }
+    .horContainer2 > .descriptionContainer{
+        /*width: 80vmin;*/
+    }
+
     .frontScreen{
         position: absolute;
         display: flex;
@@ -64,6 +75,7 @@
         padding: 5% 5% 5% 5%;
         z-index: 1;
 
+        /*background-color: red;*/
         opacity: 0;
     }
     /*.................................... subsection 1 ....................................*/
@@ -468,12 +480,12 @@
     /* -------------------------------- item description ---------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     @keyframes blur {
-        0%{ filter: blur(0); }
-        100%{ filter: blur(8px); }
+        0%{ filter: blur(0) grayscale(0); }
+        100%{ filter: blur(8px) grayscale(50%); }
     }
     @keyframes unblur {
-        0%{filter: blur(8px);}
-        100%{ filter: blur(0); }
+        0%{ filter: blur(8px) grayscale(50%); }
+        100%{ filter: blur(0) grayscale(0); }
     }
     @keyframes fade {
         0%{ opacity: 1; }

@@ -101,9 +101,10 @@ footer{
     position: relative;
     display: flex;
     flex: 1;
+    justify-content: center;
     align-items: center;
-    padding: 5vmin 5vmin 5vmin 5vmin;
-    overflow: hidden;
+    height: 30vh;
+    padding: 2.5vh 0 2.5vh 0;
 }
 .horContainer1{
     background-color: none;
@@ -113,14 +114,9 @@ footer{
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
 .screenshotContainer{
-    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-}
-.imgScreenshot{
-    width: 100%;
+    align-items: center;
 }
 .descriptionContainer{
     display: flex;
