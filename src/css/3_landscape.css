@@ -1,7 +1,7 @@
 @media (min-aspect-ratio: 1/1) {
 
-/* ===================================== ELEMENTS ===================================== */
-/* ==================================================================================== */
+    /* ===================================== ELEMENTS ===================================== */
+    /* ==================================================================================== */
     html{}
     header{}
     nav{}
@@ -13,38 +13,521 @@
     a{}
     button{}
     footer{
-        justify-content: flex-end;
+        justify-content: center;
         height: 5vmin;
     }
-/* ===================================== CLASSES ====================================== */
-/* ==================================================================================== */
+    /* ===================================== CLASSES ====================================== */
+    /* ==================================================================================== */
+
+    /* ------------------------------------ section 1 ------------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+
+    /*.................................... subsection 1 ....................................*/
     .main{
-        flex-direction: row;
+        flex-direction: column;
     }
     .spacerMenu{
-        height: 10vmin;
+        height: 5vmin;
     }
     .containerMenu{
         display: none;
+        top: 0;
+        width: 100%;
+        height: 30vmin;
     }
 
-/* ------------------------------------ section 1 ------------------------------------- */
-/* ------------------------------------------------------------------------------------ */
+    /* ------------------------------------ section 2 ------------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+    .horContainer{
+        justify-content: flex-start;
+    }
+    .horContainer1{
 
-/*..................................... subclass 1 .....................................*/
+    }
+    .horContainer2{
+        flex-direction: row-reverse;
+    }
+    .screenshotContainer{
+        width: 40vmax;
+    }
+    .horContainer1 > .screenshotContainer{
 
-/*..................................... subclass 2 .....................................*/
+    }
+    .horContainer2 > .screenshotContainer{
 
-/* ------------------------------------ section 2 ------------------------------------- */
-/* ------------------------------------------------------------------------------------ */
+    }
+    .descriptionContainer{
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        padding: 5% 5% 5% 5%;
+        background-color: var(--color-background1_50);
+        opacity: 0;
+    }
+    .frontScreen{
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 90%;
+        height: 65%;
+        padding: 5% 5% 5% 5%;
+        z-index: 1;
 
-/*..................................... subclass 1 .....................................*/
+        opacity: 0;
+    }
+    /*.................................... subsection 1 ....................................*/
 
-/*..................................... subclass 2 .....................................*/
+    /* ======================================= IDs ======================================== */
+    /* ==================================================================================== */
 
-/* ======================================= IDs ======================================== */
-/* ==================================================================================== */
+    /* =================================== ANIMATIONS ===================================== */
+    /* ==================================================================================== */
 
-/* =================================== ANIMATIONS ===================================== */
-/* ==================================================================================== */
+    /* --------------------------------------- menu --------------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+
+    @keyframes shrink_buttonMenu {
+        0%{
+            width: 20vmin;
+            height: 20vmin;
+            left: 0 4vmin 0 4vmin;
+        }
+        25%{
+            width: 20vmin;
+            height: 20vmin;
+            margin: 0 4vmin 0 4vmin;
+        }
+        50%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+        75%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+        100%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+    }
+    @keyframes unshrink_buttonMenu {
+        0%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+        25%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+        50%{
+            width: 16vmin;
+            height: 16vmin;
+            margin: 0 6vmin 0 6vmin;
+            box-shadow: none;
+        }
+        75%{
+            width: 20vmin;
+            height: 20vmin;
+            margin: 0 4vmin 0 4vmin;
+        }
+        100%{
+            width: 20vmin;
+            height: 20vmin;
+            margin: 0 4vmin 0 4vmin;
+        }
+    }
+    @keyframes hide_buttonMenu_stack {
+        0%{
+            left: 38vmin;
+            width: 16vmin;
+            height: 16vmin;
+            opacity: 1;
+        }
+        25%{
+            left: 36vmin;
+            width: 20vmin;
+            height: 20vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            width: 20vmin;
+            height: 20vmin;
+            opacity: 1;
+        }
+        100%{
+            left: 46vmin;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+    @keyframes show_buttonMenu_stack {
+        0%{
+            left: 46vmin;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        25%{
+            left: 36vmin;
+            width: 20vmin;
+            height: 20vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            width: 20vmin;
+            height: 20vmin;
+            opacity: 1;
+        }
+        100%{
+            left: 38vmin;
+            width: 16vmin;
+            height: 16vmin;
+            opacity: 0.5;
+        }
+    }
+    @keyframes hide_buttonMenu_projects {
+        0%{
+            left: 0;
+            opacity: 1;
+        }
+        25%{
+            left: 0;
+            opacity: 1;
+        }
+        50%{
+            left: 0;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        100%{
+            left: 36vmin;
+            opacity: 0;
+        }
+    }
+    @keyframes show_buttonMenu_projects {
+        0%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        25%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        50%{
+            left: 0;
+            opacity: 1;
+        }
+        75%{
+            left: 0;
+            opacity: 1;
+        }
+        100%{
+            left: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes hide_buttonMenu_blog {
+        0%{
+            left: 24vmin;
+            opacity: 1;
+        }
+        25%{
+            left: 24vmin;
+            opacity: 1;
+        }
+        50%{
+            left: 24vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        100%{
+            left: 36vmin;
+            opacity: 0;
+        }
+    }
+    @keyframes show_buttonMenu_blog {
+        0%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        25%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        50%{
+            left: 24vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 24vmin;
+            opacity: 1;
+        }
+        100%{
+            left: 24vmin;
+            opacity: 1;
+        }
+    }
+    @keyframes hide_buttonMenu_about {
+        0%{
+            left: 48vmin;
+            opacity: 1;
+        }
+        25%{
+            left: 48vmin;
+            opacity: 1;
+        }
+        50%{
+            left: 48vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        100%{
+            left: 36vmin;
+            opacity: 0;
+        }
+    }
+    @keyframes show_buttonMenu_about {
+        0%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        25%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        50%{
+            left: 48vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 48vmin;
+            opacity: 1;
+        }
+        100%{
+            left: 48vmin;
+            opacity: 1;
+        }
+    }
+    @keyframes hide_buttonMenu_connect {
+        0%{
+            left: 72vmin;
+            opacity: 1;
+        }
+        25%{
+            left: 72vmin;
+            opacity: 1;
+        }
+        50%{
+            left: 72vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        100%{
+            left: 36vmin;
+            opacity: 0;
+        }
+    }
+    @keyframes show_buttonMenu_connect {
+        0%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        25%{
+            left: 36vmin;
+            opacity: 0;
+        }
+        50%{
+            left: 72vmin;
+            opacity: 1;
+        }
+        75%{
+            left: 72vmin;
+            opacity: 1;
+        }
+        100%{
+            left: 72vmin;
+            opacity: 1;
+        }
+    }
+
+    .animation__hide_buttonMenu_stack{
+        animation-name: hide_buttonMenu_stack;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .animation__show_buttonMenu_stack{
+        animation-name: show_buttonMenu_stack;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .animation__hide_buttonMenu_projects{
+        left: 0;
+        animation-name: shrink_buttonMenu, hide_buttonMenu_projects;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction: normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__show_buttonMenu_projects{
+        left: 0;
+        animation-name: unshrink_buttonMenu, show_buttonMenu_projects;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction:normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__hide_buttonMenu_blog{
+        left: 24vmin;
+        animation-name: shrink_buttonMenu, hide_buttonMenu_blog;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction: normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__show_buttonMenu_blog{
+        left: 0;
+        animation-name: unshrink_buttonMenu, show_buttonMenu_blog;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction:normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__hide_buttonMenu_about{
+        left: 48vmin;
+        animation-name: shrink_buttonMenu, hide_buttonMenu_about;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction: normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__show_buttonMenu_about{
+        left: 0;
+        animation-name: unshrink_buttonMenu, show_buttonMenu_about;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction:normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__hide_buttonMenu_connect{
+        left: 72vmin;
+        animation-name: shrink_buttonMenu, hide_buttonMenu_connect;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction: normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+    .animation__show_buttonMenu_connect{
+        left: 0;
+        animation-name: unshrink_buttonMenu, show_buttonMenu_connect;
+        animation-duration: 1s,1s;
+        animation-timing-function: ease,ease;
+        animation-delay: 0s,0s;
+        animation-direction:normal,normal;
+        animation-iteration-count: 1,1;
+        animation-fill-mode: forwards,forwards;
+    }
+
+    /* -------------------------------- item description ---------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+    @keyframes blur {
+        0%{ filter: blur(0); }
+        100%{ filter: blur(8px); }
+    }
+    @keyframes unblur {
+        0%{filter: blur(8px);}
+        100%{ filter: blur(0); }
+    }
+    @keyframes fade {
+        0%{ opacity: 1; }
+        100%{ opacity: 0; }
+    }
+    @keyframes unfade {
+        0%{ opacity: 0; }
+        100%{ opacity: 1; }
+    }
+
+    .animation_fade{
+        animation-name: fade;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .animation_unfade{
+        animation-name: unfade;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;;
+    }
+    .animation_blur{
+        animation-name: blur;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .animation_unblur{
+        animation-name: unblur;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
 }

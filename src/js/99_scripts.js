@@ -13,15 +13,10 @@
 
 function test(){ console.log("Test Function"); }
 
-// ===================================== EXTRAS =========================================
-// ======================================================================================
-
-window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
-sr.reveal('.screenshotContainer');
-
 // ==================================== VARIABLES =======================================
 // ======================================================================================
 let menuShow = true;
+var mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
 const body = document.getElementsByTagName("body")[0];
 
 const spacerMenu = document.getElementsByClassName("spacerMenu")[0];
@@ -33,6 +28,18 @@ const frontScreens = document.getElementsByClassName("frontScreen");
 const menu = document.getElementsByClassName("menu")[0];
 const buttonMenu = document.getElementsByClassName("buttonMenu");
 const buttonMenu_stack = document.getElementById("buttonMenu_stack");
+
+// ===================================== EXTRAS =========================================
+// ======================================================================================
+
+if(mq.matches){
+    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
+} else{
+    window.sr = ScrollReveal({ distance: '40vmax', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 0.5 });
+}
+
+sr.reveal('.screenshotContainer');
+
 // ==================================== FUNCTIONS =======================================
 // ======================================================================================
 
@@ -79,26 +86,34 @@ function listener_toggleDescription(element){
 
 function hideMenu(){
     menuShow = false;
-    for(let i=0; i<buttonMenu.length; i++){
-        switch(buttonMenu[i].id){
-            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
-            case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_projects","animation__hide_buttonMenu_projects"); break;
-            case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_blog","animation__hide_buttonMenu_blog"); break;
-            case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_about","animation__hide_buttonMenu_about"); break;
-            case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_connect","animation__hide_buttonMenu_connect"); break;
+    if(mq.matches){
+        for(let i=0; i<buttonMenu.length; i++){
+            switch(buttonMenu[i].id){
+                case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
+                case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_projects","animation__hide_buttonMenu_projects"); break;
+                case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_blog","animation__hide_buttonMenu_blog"); break;
+                case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_about","animation__hide_buttonMenu_about"); break;
+                case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_connect","animation__hide_buttonMenu_connect"); break;
+            }
         }
+    } else{
+
     }
 }
 function showMenu(){
     menuShow = true;
-    for(let i=0; i<buttonMenu.length; i++){
-        switch(buttonMenu[i].id){
-            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
-            case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_projects","animation__show_buttonMenu_projects"); break;
-            case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_blog","animation__show_buttonMenu_blog"); break;
-            case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_about","animation__show_buttonMenu_about"); break;
-            case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_connect","animation__show_buttonMenu_connect"); break;
+    if(mq.matches){
+        for(let i=0; i<buttonMenu.length; i++){
+            switch(buttonMenu[i].id){
+                case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
+                case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_projects","animation__show_buttonMenu_projects"); break;
+                case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_blog","animation__show_buttonMenu_blog"); break;
+                case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_about","animation__show_buttonMenu_about"); break;
+                case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_connect","animation__show_buttonMenu_connect"); break;
+            }
         }
+    } else{
+
     }
 }
 function listener_toggleMenu(){
