@@ -36,7 +36,6 @@
         width: 100%;
         height: 16vh;
     }
-
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     .horContainer{
@@ -45,18 +44,21 @@
     .screenshotContainer{
         flex: 1;
         height: 100%;
-        margin: 0 1vw 0 1vw;
+
+        filter: grayscale(100%) opacity(0.50);
+        transition: filter 0.25s ease-in-out;
 
         /*background-color: green;*/
     }
     .descriptionContainer{
         flex: 1;
         height: 100%;
-        margin: 0 1vw 0 1vw;
+        margin: 0 2vw 0 2vw;
 
         /*background-color: green;*/
     }
     .imgScreenshot{
+        height: 100%;
         /*background-color: red;*/
     }
     .description{
@@ -64,17 +66,11 @@
     }
     .horContainer1{
         flex-direction: row;
-        padding-right: 20vw;
+        padding-right: 16vw;
     }
     .horContainer2{
         flex-direction: row-reverse;
-        padding-left: 20vw;
-    }
-    .horContainer1 .imgScreenshot{
-        height: 75%;
-    }
-    .horContainer2 .imgScreenshot{
-        height: 80%;
+        padding-left: 16vw;
     }
     .horContainer1 .description{
         height: 75%;
@@ -89,6 +85,13 @@
 
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
+
+    /* ================================== INTERACTIONS ==================================== */
+    /* ==================================================================================== */
+
+    .screenshotContainer:hover{
+        filter: grayscale(0%) opacity(1);
+    }
 
     /* =================================== ANIMATIONS ===================================== */
     /* ==================================================================================== */
