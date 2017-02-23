@@ -78,22 +78,29 @@ function replaceClass(classList,className1,className2){
 function listener_toggleDescription(element){
     let screenshot = element.target.parentNode.getElementsByClassName("imgScreenshot")[0];
     let description = element.target.parentNode.getElementsByClassName("descriptionContainer")[0];
+    let frontScreen = element.target;
     if(hasClass(element.target,"descriptionShow")){ //Fade description out, blur screenshot out.
-        element.target.classList.remove("descriptionShow");
-        element.target.classList.remove("animation_unfade");
-        element.target.classList.add("animation_fade");
-        screenshot.classList.remove("animation_blur");
-        screenshot.classList.add("animation_unblur");
-        description.classList.remove("animation_unfade");
-        description.classList.add("animation_fade");
+
+        screenshot.classList.add("animation__show_screnshot");
+        screenshot.classList.remove("animation__hide_screnshot");
+
+        description.classList.add("animation__hide_description");
+        description.classList.remove("animation__show_description");
+
+        frontScreen.classList.add("animation__hide_description");
+        frontScreen.classList.remove("animation__show_description");
+        frontScreen.classList.remove("descriptionShow");
+
     } else {
-        element.target.classList.add("descriptionShow");
-        element.target.classList.add("animation_unfade");
-        element.target.classList.remove("animation_fade");
-        screenshot.classList.add("animation_blur");
-        screenshot.classList.remove("animation_unblur");
-        description.classList.add("animation_unfade");
-        description.classList.remove("animation_fade");
+        screenshot.classList.add("animation__hide_screnshot");
+        screenshot.classList.remove("animation__show_screnshot");
+
+        description.classList.add("animation__show_description");
+        description.classList.remove("animation__hide_description");
+
+        frontScreen.classList.add("animation__show_description");
+        frontScreen.classList.remove("animation__hide_description");
+        frontScreen.classList.add("descriptionShow");
     }
 }
 

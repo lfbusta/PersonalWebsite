@@ -27,43 +27,61 @@
         flex-direction: column;
     }
     .spacerMenu{
-        height:16vh;
+        height:30vmin;
     }
     .containerMenu{
         top: 0;
         width: 100%;
-        height: 16vh;
+        height: 30vmin;
+        /*background-color: green;*/
     }
+    .buttonMenu{
 
+    }
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     .horContainer{
         justify-content: center;
     }
     .screenshotContainer{
-        width: 100%;
         height: 100%;
-    }
-    .horContainer1 .imgScreenshot{
-        height: 85%;
-    }
-    .horContainer2 .imgScreenshot{
-        height: 90%;
+        /*background-color: green;*/
     }
     .descriptionContainer{
         position: absolute;
-        padding: 8% 8% 8% 8%;
+        width: 100%;
         opacity: 0;
+        /*background-color: red;*/
+    }
+    .description{
+        padding: 5% 5% 5% 5%;
+        /*background-color: red;*/
+    }
+    .horContainer1 > .screenshotContainer{
+        height: 85%;
+    }
+    .horContainer2 > .screenshotContainer{
+        height: 90%;
     }
     .horContainer1 > .descriptionContainer{
-        width: 68%;
-        height: 66%;
+        height: 86%;
         background-color: var(--color-background1_25);
     }
     .horContainer2 > .descriptionContainer{
-        width: 72%;
-        height: 70%;
+        height: 90%;
         background-color: var(--color-background2_25);
+    }
+    .horContainer1 .imgScreenshot{
+        width: 85%;
+    }
+    .horContainer2 .imgScreenshot{
+        width: 90%;
+    }
+    .horContainer1 .description{
+        width: 75%;
+    }
+    .horContainer2 .description{
+        width: 80%;
     }
 
     .frontScreen{
@@ -480,53 +498,61 @@
 
     /* -------------------------------- item description ---------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-    @keyframes blur {
-        0%{ filter: blur(0); }
-        100%{ filter: blur(8px); }
+    @keyframes hide_screenshot {
+        0%{
+            filter: opacity(1) grayscale(0);
+        }
+        100%{
+            filter: opacity(0.75) grayscale(100%);
+        }
     }
-    @keyframes unblur {
-        0%{ filter: blur(8px); }
-        100%{ filter: blur(0); }
+    @keyframes show_screenshot {
+        0%{
+            filter: opacity(0.75) grayscale(100%);
+        }
+        100%{
+            filter: opacity(1) grayscale(0);
+        }
     }
-    @keyframes fade {
+    @keyframes hide_description {
         0%{ opacity: 1; }
         100%{ opacity: 0; }
     }
-    @keyframes unfade {
+    @keyframes show_description {
         0%{ opacity: 0; }
         100%{ opacity: 1; }
     }
 
-    .animation_fade{
-        animation-name: fade;
-        animation-duration: 0.5s;
+    .animation__hide_description{
+        animation-name: hide_description;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
-    .animation_unfade{
-        animation-name: unfade;
-        animation-duration: 0.5s;
+    .animation__show_description{
+        animation-name: show_description;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;;
     }
-    .animation_blur{
-        animation-name: blur;
-        animation-duration: 0.5s;
+    .animation__hide_screenshot{
+        animation-name: hide_screenshot;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
-    .animation_unblur{
-        animation-name: unblur;
-        animation-duration: 0.5s;
+    .animation__show_screnshot{
+        animation-name: show_screnshot;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
