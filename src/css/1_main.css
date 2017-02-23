@@ -35,6 +35,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 100%;
+    z-index: 2;
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
@@ -62,6 +63,7 @@ button{
 footer{
     display: flex;
     width: 100%;
+    z-index: 2;
     overflow: hidden;
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
@@ -104,14 +106,16 @@ footer{
     flex: 1;
     align-items: center;
     height: 40vh;
-    padding: 2.5vh 0 2.5vh 0;
+    /*padding: 2.5vh 0 2.5vh 0;*/
 }
 .horContainer1{
     background-color: none;
 }
 .horContainer2{
+    z-index: 2;
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
+    /*box-shadow: 0 0vmin 2vmin red;*/
 }
 .screenshotContainer{
     display: flex;
