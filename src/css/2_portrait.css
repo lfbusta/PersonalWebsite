@@ -27,17 +27,17 @@
         flex-direction: column;
     }
     .spacerMenu{
-        height:16vh;
+        height:30vmin;
     }
     .containerMenu{
         top: 0;
         width: 100%;
-        height: 16vh;
+        height: 30vmin;
+        /*background-color: green;*/
     }
     .buttonMenu{
 
     }
-
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     .horContainer{
