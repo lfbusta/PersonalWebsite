@@ -42,32 +42,46 @@
     .horContainer{
         justify-content: flex-start;
     }
-    .horContainer1{
-        flex-direction: row;
-        /*padding-right: 10vw;*/
-    }
-    .horContainer2{
-        flex-direction: row-reverse;
-        /*padding-left: 10vw;*/
-    }
     .screenshotContainer{
         flex: 1;
         height: 100%;
-        margin: 0 5vw 0 5vw;
+        margin: 0 1vw 0 1vw;
 
-        background-color: red;
-    }
-    .imgScreenshot{
-        height: 90%;
+        /*background-color: green;*/
     }
     .descriptionContainer{
         flex: 1;
         height: 100%;
-        margin: 0 5vw 0 5vw;
+        margin: 0 1vw 0 1vw;
 
-        background-color: red;
+        /*background-color: green;*/
     }
-
+    .imgScreenshot{
+        /*background-color: red;*/
+    }
+    .description{
+        /*background-color: red;*/
+    }
+    .horContainer1{
+        flex-direction: row;
+        padding-right: 20vw;
+    }
+    .horContainer2{
+        flex-direction: row-reverse;
+        padding-left: 20vw;
+    }
+    .horContainer1 .imgScreenshot{
+        height: 75%;
+    }
+    .horContainer2 .imgScreenshot{
+        height: 80%;
+    }
+    .horContainer1 .description{
+        height: 75%;
+    }
+    .horContainer2 .description{
+        height: 80%;
+    }
     .frontScreen{
         display: none;
     }

@@ -36,42 +36,31 @@ if(mq.matches){
     window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
     sr.reveal('.horContainer');
 } else{
-    window.sr = ScrollReveal();
-    let slideFromLeft = {
-        origin: "left",
-        distance: "100vw",
-        duration: 500,
+    const common = {
+        distance: "40vw",
+        duration: 1000,
         delay: 0,
         opacity: 0,
         scale: 1,
         reset: true,
-        viewFactor: 1.2
-    };
-    let slideFromRight = {
-        origin: "tight",
-        distance: "100vw",
-        duration: 500,
-        delay: 0,
-        opacity: 0,
-        scale: 1,
-        reset: true,
-        viewFactor: 1.2
-    };
+        viewFactor: 0.25
+    }
+    window.sr = ScrollReveal(common);
 
     const horContainer1s = document.getElementsByClassName("horContainer1");
-    for(let i=0; i<horContainer1s.length; i++){
-        horContainer1s[i].getElementsByClassName('imgScreenshot')[0].classList.add("slideFromLeft");
-        horContainer1s[i].getElementsByClassName('description')[0].classList.add("slideFromRight");
-        // console.log(horContainer1s[i].getElementsByClassName('imgScreenshot')[0].classList);
-        // console.log(horContainer1s[i].getElementsByClassName('description')[0].classList);
-    }
     const horContainer2s = document.getElementsByClassName("horContainer2");
-    for(let i=0; i<horContainer2s.length; i++){
-        horContainer2s[i].getElementsByClassName('imgScreenshot')[0].classList.add("slideFromRight");
-        horContainer2s[i].getElementsByClassName('description')[0].classList.add("slideFromLeft");
+    for(let i=0; i<horContainer1s.length; i++){
+        horContainer1s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromLeft");
+        horContainer1s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromRight");
     }
-    sr.reveal(".slideFromLeft",slideFromLeft);
-    sr.reveal(".slideFromRight",slideFromRight);
+    for(let i=0; i<horContainer2s.length; i++){
+        horContainer2s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromRight");
+        horContainer2s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromLeft");
+    }
+    sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
+    sr.reveal(".slideSecondFromRight", { origin: "right", delay: 500 });
+    sr.reveal(".slideFirstFromRight", { origin: "right", delay: 0 });
+    sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 500 });
 }
 
 // ==================================== FUNCTIONS =======================================
