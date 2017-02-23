@@ -34,6 +34,9 @@
         width: 100%;
         height: 16vh;
     }
+    .buttonMenu{
+
+    }
 
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -41,29 +44,36 @@
         justify-content: center;
     }
     .screenshotContainer{
-        width: 100%;
         height: 100%;
-    }
-    .horContainer1 .imgScreenshot{
-        height: 85%;
-    }
-    .horContainer2 .imgScreenshot{
-        height: 90%;
+        /*background-color: red;*/
     }
     .descriptionContainer{
         position: absolute;
-        padding: 8% 8% 8% 8%;
+        padding: 0 12% 0 12%;
         opacity: 0;
+        /*background-color: red;*/
+    }
+    .horContainer1 .imgScreenshot{
+        width: 85%;
+    }
+    .horContainer2 .imgScreenshot{
+        width: 90%;
+    }
+    .horContainer1 > .screenshotContainer{
+        height: 85%;
+    }
+    .horContainer2 > .screenshotContainer{
+        height: 90%;
     }
     .horContainer1 > .descriptionContainer{
-        width: 68%;
-        height: 66%;
-        background-color: var(--color-background1_25);
+        width: 70%;
+        height: 90%;
+        /*background-color: var(--color-background1_25);*/
     }
     .horContainer2 > .descriptionContainer{
-        width: 72%;
-        height: 70%;
-        background-color: var(--color-background2_25);
+        width: 74%;
+        height: 90%;
+        /*background-color: var(--color-background2_25);*/
     }
 
     .frontScreen{
@@ -481,12 +491,20 @@
     /* -------------------------------- item description ---------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     @keyframes blur {
-        0%{ filter: blur(0); }
-        100%{ filter: blur(8px); }
+        0%{
+            filter: blur(0) grayscale(0);
+        }
+        100%{
+            filter: blur(1vmin) grayscale(25%);
+        }
     }
     @keyframes unblur {
-        0%{ filter: blur(8px); }
-        100%{ filter: blur(0); }
+        0%{
+            filter: blur(1vmin) grayscale(25%);
+        }
+        100%{
+            filter: blur(0) grayscale(0);
+        }
     }
     @keyframes fade {
         0%{ opacity: 1; }
@@ -499,7 +517,7 @@
 
     .animation_fade{
         animation-name: fade;
-        animation-duration: 0.5s;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
@@ -508,7 +526,7 @@
     }
     .animation_unfade{
         animation-name: unfade;
-        animation-duration: 0.5s;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
@@ -517,7 +535,7 @@
     }
     .animation_blur{
         animation-name: blur;
-        animation-duration: 0.5s;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
@@ -526,7 +544,7 @@
     }
     .animation_unblur{
         animation-name: unblur;
-        animation-duration: 0.5s;
+        animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
         animation-direction: normal;
