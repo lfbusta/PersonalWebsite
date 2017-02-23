@@ -33,12 +33,35 @@ const buttonMenu_stack = document.getElementById("buttonMenu_stack");
 // ======================================================================================
 
 if(mq.matches){
-    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.4 });
+    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
+    sr.reveal('.horContainer');
 } else{
-    window.sr = ScrollReveal({ distance: '40vmax', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 0.5 });
-}
+    const common = {
+        distance: "40vw",
+        duration: 1000,
+        delay: 0,
+        opacity: 0,
+        scale: 1,
+        reset: true,
+        viewFactor: 0.25
+    }
+    window.sr = ScrollReveal(common);
 
-sr.reveal('.horContainer');
+    const horContainer1s = document.getElementsByClassName("horContainer1");
+    const horContainer2s = document.getElementsByClassName("horContainer2");
+    for(let i=0; i<horContainer1s.length; i++){
+        horContainer1s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromLeft");
+        horContainer1s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromRight");
+    }
+    for(let i=0; i<horContainer2s.length; i++){
+        horContainer2s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromRight");
+        horContainer2s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromLeft");
+    }
+    sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
+    sr.reveal(".slideSecondFromRight", { origin: "right", delay: 500 });
+    sr.reveal(".slideFirstFromRight", { origin: "right", delay: 0 });
+    sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 500 });
+}
 
 // ==================================== FUNCTIONS =======================================
 // ======================================================================================
@@ -55,16 +78,6 @@ function replaceClass(classList,className1,className2){
 function listener_toggleDescription(element){
     let screenshot = element.target.parentNode.getElementsByClassName("imgScreenshot")[0];
     let description = element.target.parentNode.getElementsByClassName("descriptionContainer")[0];
-    // let screenshot = elements[0];
-    // let description = elements[0];
-    // for(let i=0; i<elements.length; i++){
-    //     if(hasClass(elements[i],"imgScreenshot")){
-    //         screenshot = elements[i];
-    //     }
-    //     if(hasClass(elements[i],"descriptionContainer")){
-    //         description = elements[i];
-    //     }
-    // }
     if(hasClass(element.target,"descriptionShow")){ //Fade description out, blur screenshot out.
         element.target.classList.remove("descriptionShow");
         element.target.classList.remove("animation_unfade");
@@ -82,8 +95,6 @@ function listener_toggleDescription(element){
         description.classList.add("animation_unfade");
         description.classList.remove("animation_fade");
     }
-    // console.log(screenshot.classList);
-    // console.log(description.classList);
 }
 
 function hideMenu(){
