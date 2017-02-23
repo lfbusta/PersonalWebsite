@@ -18,8 +18,7 @@ function test(){ console.log("Test Function"); }
 let menuShow = true;
 var mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
 const body = document.getElementsByTagName("body")[0];
-
-const spacerMenu = document.getElementsByClassName("spacerMenu")[0];
+const header = document.getElementsByTagName("header")[0];
 
 const screenshotContainers = document.getElementsByClassName("screenshotContainer");
 const screenshots = document.getElementsByClassName("imgScreenshot");
@@ -79,7 +78,7 @@ function listener_toggleDescription(element){
     let screenshot = element.target.parentNode.getElementsByClassName("imgScreenshot")[0];
     let description = element.target.parentNode.getElementsByClassName("descriptionContainer")[0];
     let frontScreen = element.target;
-    if(hasClass(element.target,"descriptionShow")){ //Fade description out, blur screenshot out.
+    if(hasClass(element.target,"descriptionShow")){
 
         screenshot.classList.add("animation__show_screnshot");
         screenshot.classList.remove("animation__hide_screnshot");
@@ -91,7 +90,8 @@ function listener_toggleDescription(element){
         frontScreen.classList.remove("animation__show_description");
         frontScreen.classList.remove("descriptionShow");
 
-    } else {
+    }
+    else {
         screenshot.classList.add("animation__hide_screnshot");
         screenshot.classList.remove("animation__show_screnshot");
 
@@ -106,39 +106,31 @@ function listener_toggleDescription(element){
 
 function hideMenu(){
     menuShow = false;
-    if(mq.matches){
-        for(let i=0; i<buttonMenu.length; i++){
-            switch(buttonMenu[i].id){
-                case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
-                case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_projects","animation__hide_buttonMenu_projects"); break;
-                case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_blog","animation__hide_buttonMenu_blog"); break;
-                case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_about","animation__hide_buttonMenu_about"); break;
-                case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_connect","animation__hide_buttonMenu_connect"); break;
-            }
+    for(let i=0; i<buttonMenu.length; i++){
+        switch(buttonMenu[i].id){
+            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
+            case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_projects","animation__hide_buttonMenu_projects"); break;
+            case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_blog","animation__hide_buttonMenu_blog"); break;
+            case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_about","animation__hide_buttonMenu_about"); break;
+            case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_connect","animation__hide_buttonMenu_connect"); break;
         }
-    } else{
-
     }
 }
 function showMenu(){
     menuShow = true;
-    if(mq.matches){
-        for(let i=0; i<buttonMenu.length; i++){
-            switch(buttonMenu[i].id){
-                case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
-                case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_projects","animation__show_buttonMenu_projects"); break;
-                case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_blog","animation__show_buttonMenu_blog"); break;
-                case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_about","animation__show_buttonMenu_about"); break;
-                case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_connect","animation__show_buttonMenu_connect"); break;
-            }
+    for(let i=0; i<buttonMenu.length; i++){
+        switch(buttonMenu[i].id){
+            case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
+            case "buttonMenu_projects": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_projects","animation__show_buttonMenu_projects"); break;
+            case "buttonMenu_blog": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_blog","animation__show_buttonMenu_blog"); break;
+            case "buttonMenu_about": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_about","animation__show_buttonMenu_about"); break;
+            case "buttonMenu_connect": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_connect","animation__show_buttonMenu_connect"); break;
         }
-    } else{
-
     }
 }
 function listener_toggleMenu(){
-    if(body.scrollTop < 0.75*spacerMenu.scrollHeight){
-        if(!menuShow){
+    if(body.scrollTop < 0.75*header.scrollHeight){
+        if(!menuShow && mq.matches){
             showMenu();
         }
     } else if(menuShow){
@@ -147,7 +139,10 @@ function listener_toggleMenu(){
 }
 function listener_overrideToggleMenu(){
     if(!menuShow){
-        showMenu()
+        showMenu();
+    }
+    else{
+        hideMenu();
     }
 }
 // ==================================== LISTENERS =======================================
@@ -156,6 +151,7 @@ function listener_overrideToggleMenu(){
 for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("click", listener_toggleDescription, false); }
 document.addEventListener("scroll", listener_toggleMenu, false);
 buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false);
+buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
 
 // ===================================== ONLOAD =========================================
 // ======================================================================================

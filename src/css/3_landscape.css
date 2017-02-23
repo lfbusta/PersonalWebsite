@@ -4,7 +4,9 @@
     /* ==================================================================================== */
     /**{ background-color: rgba(0,0,0,0.25); }*/
     html{}
-    header{}
+    header{
+        height:20vh;
+    }
     nav{}
     body{}
     h1{}
@@ -22,19 +24,19 @@
 
     /* ------------------------------------ section 1 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-
-    /*.................................... subsection 1 ....................................*/
     .main{
         flex-direction: column;
     }
-    .spacerMenu{
-        height:16vh;
-    }
+    /*.................................... subsection 1 ....................................*/
     .containerMenu{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         top: 0;
-        width: 100%;
-        height: 16vh;
+        width: 50vh;
+        height: 50vh;
+
+        /*background-color: green;*/
     }
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -86,6 +88,11 @@
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
 
+    #buttonMenu_stack{
+        top: 2.5vh;
+        left: 2.5vh;
+    }
+
     /* ================================== INTERACTIONS ==================================== */
     /* ==================================================================================== */
 
@@ -101,289 +108,329 @@
 
     @keyframes shrink_buttonMenu {
         0%{
-            width: 20vmin;
-            height: 20vmin;
-            left: 0 4vmin 0 4vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 0 0 0 0;
         }
         25%{
-            width: 20vmin;
-            height: 20vmin;
-            margin: 0 4vmin 0 4vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 0 0 0 0;
         }
         50%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
         75%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
         100%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
     }
     @keyframes unshrink_buttonMenu {
         0%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
         25%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
         50%{
-            width: 16vmin;
-            height: 16vmin;
-            margin: 0 6vmin 0 6vmin;
+            width: 5vh;
+            height: 5vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             box-shadow: none;
         }
         75%{
-            width: 20vmin;
-            height: 20vmin;
-            margin: 0 4vmin 0 4vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 0 0 0 0;
         }
         100%{
-            width: 20vmin;
-            height: 20vmin;
-            margin: 0 4vmin 0 4vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 0 0 0 0;
         }
     }
     @keyframes hide_buttonMenu_stack {
         0%{
-            left: 38vmin;
-            width: 16vmin;
-            height: 16vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             opacity: 1;
         }
         25%{
-            left: 36vmin;
-            width: 20vmin;
-            height: 20vmin;
+            width: 15vh;
+            height: 15vh;
+            margin: 0 0 0 0;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
-            width: 20vmin;
-            height: 20vmin;
+            width: 15vh;
+            height: 15vh;
+            margin: 0 0 0 0;
             opacity: 1;
         }
         100%{
-            left: 46vmin;
-            width: 0;
-            height: 0;
-            opacity: 0;
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+            opacity: 1;
         }
     }
     @keyframes show_buttonMenu_stack {
         0%{
-            left: 46vmin;
-            width: 0;
-            height: 0;
-            opacity: 0;
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+            opacity: 1;
         }
         25%{
-            left: 36vmin;
-            width: 20vmin;
-            height: 20vmin;
+            width: 15vh;
+            height: 15vh;
+            margin: 0 0 0 0;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
-            width: 20vmin;
-            height: 20vmin;
+            width: 15vh;
+            height: 15vh;
+            margin: 0 0 0 0;
             opacity: 1;
         }
         100%{
-            left: 38vmin;
-            width: 16vmin;
-            height: 16vmin;
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
             opacity: 0.5;
         }
     }
     @keyframes hide_buttonMenu_projects {
         0%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
         25%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
         50%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
+            left: 2.5vh;
+            top: 5vh;
             opacity: 0;
         }
         100%{
-            left: 36vmin;
+            left: 2.5vh;
+            top: 5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_projects {
         0%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         25%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         50%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
         75%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
         100%{
-            left: 0;
+            left: 30vh;
+            top: 5vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_blog {
         0%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
         25%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
         50%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         100%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_blog {
         0%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         25%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         50%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
         75%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
         100%{
-            left: 24vmin;
+            left: 26.6vh;
+            top: 17.5vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_about {
         0%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
         25%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
         50%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         100%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_about {
         0%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         25%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         50%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
         75%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
         100%{
-            left: 48vmin;
+            left: 17.5vh;
+            top: 26.6vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_connect {
         0%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
         25%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
         50%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
         75%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         100%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_connect {
         0%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         25%{
-            left: 36vmin;
+            left: 5vh;
+            top: 5vh;
             opacity: 0;
         }
         50%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
         75%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
         100%{
-            left: 72vmin;
+            left: 5vh;
+            top: 30vh;
             opacity: 1;
         }
     }
