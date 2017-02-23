@@ -43,7 +43,7 @@ if(mq.matches){
         opacity: 0,
         scale: 1,
         reset: true,
-        viewFactor: 0.25
+        viewFactor: 0.1
     }
     window.sr = ScrollReveal(common);
 
@@ -58,9 +58,9 @@ if(mq.matches){
         horContainer2s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromLeft");
     }
     sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
-    sr.reveal(".slideSecondFromRight", { origin: "right", delay: 500 });
+    sr.reveal(".slideSecondFromRight", { origin: "right", delay: 250 });
     sr.reveal(".slideFirstFromRight", { origin: "right", delay: 0 });
-    sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 500 });
+    sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 250 });
 }
 
 // ==================================== FUNCTIONS =======================================
