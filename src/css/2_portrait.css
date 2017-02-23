@@ -45,19 +45,17 @@
     }
     .screenshotContainer{
         height: 100%;
-        /*background-color: red;*/
+        /*background-color: green;*/
     }
     .descriptionContainer{
         position: absolute;
-        padding: 0 12% 0 12%;
+        width: 100%;
         opacity: 0;
         /*background-color: red;*/
     }
-    .horContainer1 .imgScreenshot{
-        width: 85%;
-    }
-    .horContainer2 .imgScreenshot{
-        width: 90%;
+    .description{
+        padding: 5% 5% 5% 5%;
+        /*background-color: red;*/
     }
     .horContainer1 > .screenshotContainer{
         height: 85%;
@@ -66,14 +64,24 @@
         height: 90%;
     }
     .horContainer1 > .descriptionContainer{
-        width: 70%;
-        height: 90%;
-        /*background-color: var(--color-background1_25);*/
+        height: 86%;
+        background-color: var(--color-background1_25);
     }
     .horContainer2 > .descriptionContainer{
-        width: 74%;
         height: 90%;
-        /*background-color: var(--color-background2_25);*/
+        background-color: var(--color-background2_25);
+    }
+    .horContainer1 .imgScreenshot{
+        width: 85%;
+    }
+    .horContainer2 .imgScreenshot{
+        width: 90%;
+    }
+    .horContainer1 .description{
+        width: 75%;
+    }
+    .horContainer2 .description{
+        width: 80%;
     }
 
     .frontScreen{
@@ -490,33 +498,33 @@
 
     /* -------------------------------- item description ---------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-    @keyframes blur {
+    @keyframes hide_screenshot {
         0%{
-            filter: blur(0) grayscale(0);
+            filter: opacity(1) grayscale(0);
         }
         100%{
-            filter: blur(1vmin) grayscale(25%);
+            filter: opacity(0.75) grayscale(100%);
         }
     }
-    @keyframes unblur {
+    @keyframes show_screenshot {
         0%{
-            filter: blur(1vmin) grayscale(25%);
+            filter: opacity(0.75) grayscale(100%);
         }
         100%{
-            filter: blur(0) grayscale(0);
+            filter: opacity(1) grayscale(0);
         }
     }
-    @keyframes fade {
+    @keyframes hide_description {
         0%{ opacity: 1; }
         100%{ opacity: 0; }
     }
-    @keyframes unfade {
+    @keyframes show_description {
         0%{ opacity: 0; }
         100%{ opacity: 1; }
     }
 
-    .animation_fade{
-        animation-name: fade;
+    .animation__hide_description{
+        animation-name: hide_description;
         animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
@@ -524,8 +532,8 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
-    .animation_unfade{
-        animation-name: unfade;
+    .animation__show_description{
+        animation-name: show_description;
         animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
@@ -533,8 +541,8 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;;
     }
-    .animation_blur{
-        animation-name: blur;
+    .animation__hide_screenshot{
+        animation-name: hide_screenshot;
         animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
@@ -542,8 +550,8 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
-    .animation_unblur{
-        animation-name: unblur;
+    .animation__show_screnshot{
+        animation-name: show_screnshot;
         animation-duration: 0.25s;
         animation-timing-function: ease;
         animation-delay: 0s;
