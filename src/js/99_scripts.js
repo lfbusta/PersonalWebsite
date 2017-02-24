@@ -20,13 +20,14 @@ var mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
 const body = document.getElementsByTagName("body")[0];
 const header = document.getElementsByTagName("header")[0];
 
+const containerMenu = document.getElementsByClassName("containerMenu")[0];
+const buttonMenu = document.getElementsByClassName("buttonMenu");
+const buttonMenu_stack = document.getElementById("buttonMenu_stack");
+
 const screenshotContainers = document.getElementsByClassName("screenshotContainer");
 const screenshots = document.getElementsByClassName("imgScreenshot");
 const descriptionContainers = document.getElementsByClassName("descriptionContainer");
 const frontScreens = document.getElementsByClassName("frontScreen");
-const menu = document.getElementsByClassName("menu")[0];
-const buttonMenu = document.getElementsByClassName("buttonMenu");
-const buttonMenu_stack = document.getElementById("buttonMenu_stack");
 
 // ===================================== EXTRAS =========================================
 // ======================================================================================
@@ -106,6 +107,7 @@ function listener_toggleDescription(element){
 
 function hideMenu(){
     menuShow = false;
+    replaceClass(containerMenu.classList,"containerMenu_shown","containerMenu_hidden");
     for(let i=0; i<buttonMenu.length; i++){
         switch(buttonMenu[i].id){
             case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__hide_buttonMenu_stack","animation__show_buttonMenu_stack"); break;
@@ -118,6 +120,7 @@ function hideMenu(){
 }
 function showMenu(){
     menuShow = true;
+    replaceClass(containerMenu.classList,"containerMenu_hidden","containerMenu_shown");
     for(let i=0; i<buttonMenu.length; i++){
         switch(buttonMenu[i].id){
             case "buttonMenu_stack": replaceClass(buttonMenu[i].classList,"animation__show_buttonMenu_stack","animation__hide_buttonMenu_stack"); break;
@@ -148,11 +151,13 @@ function listener_overrideToggleMenu(){
 // ==================================== LISTENERS =======================================
 // ======================================================================================
 
-for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("click", listener_toggleDescription, false); }
 document.addEventListener("scroll", listener_toggleMenu, false);
-buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false);
-buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
 
+if(mq.matches){ buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false); }
+else{ buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false); }
+
+
+for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("click", listener_toggleDescription, false); }
 // ===================================== ONLOAD =========================================
 // ======================================================================================
 
