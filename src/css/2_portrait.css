@@ -9,9 +9,9 @@
     nav{}
     body{}
     h1{}
-    h2{}
+    h2{ font-size: 5vw; }
     h3{}
-    p{}
+    p{ font-size: 3vw; }
     a{}
     button{}
     footer{
@@ -46,9 +46,10 @@
         height: 100%;
         /*background-color: green;*/
     }
+
     .descriptionContainer{
         position: absolute;
-        width: 100%;
+        /*width: 100%;*/
         opacity: 0;
         /*background-color: red;*/
     }
@@ -56,33 +57,43 @@
         padding: 5% 5% 5% 5%;
         /*background-color: red;*/
     }
+
     .horContainer1 > .screenshotContainer{
-        height: 85%;
+        /*height: 85%;*/
+        height: 32vh;
+        /*background-color: white;*/
     }
     .horContainer2 > .screenshotContainer{
-        height: 90%;
+        /*height: 90%;*/
+        height: 34vh;
     }
     .horContainer1 > .descriptionContainer{
+        /*width: 75%;*/
         height: 86%;
         background-color: var(--color-background1_25);
     }
     .horContainer2 > .descriptionContainer{
+        /*width: 80%;*/
         height: 90%;
         background-color: var(--color-background2_25);
     }
     .horContainer1 .imgScreenshot{
-        width: 85%;
+        width: 85vw;
     }
     .horContainer2 .imgScreenshot{
-        width: 90%;
-    }
-    .horContainer1 .description{
-        width: 75%;
-    }
-    .horContainer2 .description{
-        width: 80%;
+        width: 90vw;
     }
 
+    .horContainer1 .descriptionContainer{
+        width: 85vw;
+        height: 54vw;
+        max-height: 32vh;
+    }
+    .horContainer2 .descriptionContainer{
+        width: 90vw;
+        height: 57vw;
+        max-height: 34vh;
+    }
     .frontScreen{
         position: absolute;
         display: flex;
