@@ -43,6 +43,7 @@ body{
     flex-direction: column;
     width: 100vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 h1{}
 h2{}
