@@ -103,6 +103,7 @@ footer{
     display: flex;
     flex: 1;
     align-items: center;
+    width: 100vw;
     height: 40vh;
     /*padding: 2.5vh 0 2.5vh 0;*/
 }
@@ -117,11 +118,12 @@ footer{
 }
 
 .screenshotContainer{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
+    /*background-color: var(--color-test);*/
 }
 
 .descriptionContainer{
@@ -130,6 +132,7 @@ footer{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer{
     position: relative;
@@ -167,8 +170,10 @@ footer{
     flex: 1;
     margin-left: 2%;
     margin-right: 4%;
-
     /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_content_tech > p{
+    text-align: right;
 }
 .description{
     display: flex;

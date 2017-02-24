@@ -10,9 +10,9 @@
     nav{}
     body{}
     h1{}
-    h2{}
+    h2{ font-size: 4vh; }
     h3{}
-    p{}
+    p{ font-size: 2vh; }
     a{}
     button{}
     footer{
@@ -55,41 +55,27 @@
         justify-content: flex-start;
     }
     .screenshotContainer{
-        flex: 1;
-        height: 100%;
+        height: 40vh;
+        width: 64vh;
 
         filter: grayscale(100%) opacity(0.50);
         transition: filter 0.25s ease-in-out;
 
-        /*background-color: green;*/
+        background-color: green;
     }
     .descriptionContainer{
         flex: 1;
         height: 100%;
         margin: 0 2vw 0 2vw;
-
-        /*background-color: green;*/
     }
     .imgScreenshot{
-        height: 100%;
-        /*background-color: red;*/
-    }
-    .description{
-        /*background-color: red;*/
+        width: 100%;
     }
     .horContainer1{
         flex-direction: row;
-        padding-right: 16vw;
     }
     .horContainer2{
         flex-direction: row-reverse;
-        padding-left: 16vw;
-    }
-    .horContainer1 .description{
-        height: 75%;
-    }
-    .horContainer2 .description{
-        height: 80%;
     }
     .frontScreen{
         display: none;
