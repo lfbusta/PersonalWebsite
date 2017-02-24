@@ -43,6 +43,7 @@ body{
     flex-direction: column;
     width: 100vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 h1{}
 h2{}
@@ -85,7 +86,6 @@ footer{
 }
 .buttonMenu{
     position: absolute;
-    /*margin: 0 4vmin 0 4vmin;*/
     border-radius: 50vmin;
     box-shadow: 0 1vmin 2vmin var(--color-shadow);
 

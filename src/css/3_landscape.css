@@ -32,11 +32,22 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        left: 0;
         top: 0;
+        border-radius: 0 0 100% 0;
+        /*background-color: green;*/
+    }
+    .containerMenu_hidden{
+        width: 0;
+        height: 0;
+    }
+    .containerMenu_shown{
         width: 50vh;
         height: 50vh;
-
-        /*background-color: green;*/
+    }
+    .buttonMenu{
+        transition: height 0.25s ease-in-out;
+        transition: width 0.25s ease-in-out;
     }
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -87,85 +98,28 @@
 
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
-
     #buttonMenu_stack{
         top: 2.5vh;
         left: 2.5vh;
     }
-
     /* ================================== INTERACTIONS ==================================== */
     /* ==================================================================================== */
-
     .screenshotContainer:hover{
         filter: grayscale(0%) opacity(1);
     }
+    /*.buttonMenu:hover{
+        width: 15vh;
+        height: 15vh;
+        margin: 0 0 0 0;
 
+        left: 2.5vh;
+        top: 27.5vh;
+    }*/
     /* =================================== ANIMATIONS ===================================== */
     /* ==================================================================================== */
 
     /* --------------------------------------- menu --------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-
-    @keyframes shrink_buttonMenu {
-        0%{
-            width: 10vh;
-            height: 10vh;
-            margin: 0 0 0 0;
-        }
-        25%{
-            width: 10vh;
-            height: 10vh;
-            margin: 0 0 0 0;
-        }
-        50%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-        75%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-        100%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-    }
-    @keyframes unshrink_buttonMenu {
-        0%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-        25%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-        50%{
-            width: 5vh;
-            height: 5vh;
-            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-            box-shadow: none;
-        }
-        75%{
-            width: 10vh;
-            height: 10vh;
-            margin: 0 0 0 0;
-        }
-        100%{
-            width: 10vh;
-            height: 10vh;
-            margin: 0 0 0 0;
-        }
-    }
     @keyframes hide_buttonMenu_stack {
         0%{
             width: 10vh;
@@ -218,219 +172,280 @@
             opacity: 0.5;
         }
     }
+
+    @keyframes shrink_buttonMenu {
+        0%{
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        }
+        25%{
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        }
+        50%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+        75%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+        100%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+    }
+    @keyframes expand_buttonMenu {
+        0%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+        25%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+        50%{
+            width: 5vh;
+            height: 5vh;
+            margin: 5vh 5vh 5vh 5vh;
+            box-shadow: none;
+        }
+        75%{
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        }
+        100%{
+            width: 10vh;
+            height: 10vh;
+            margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        }
+    }
     @keyframes hide_buttonMenu_projects {
         0%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
         25%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
         50%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
         75%{
             left: 2.5vh;
-            top: 5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         100%{
             left: 2.5vh;
-            top: 5vh;
+            top: 2.5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_projects {
         0%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         25%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         50%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
         75%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
         100%{
-            left: 30vh;
-            top: 5vh;
+            left: 27.5vh;
+            top: 2.5vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_blog {
         0%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
         25%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
         50%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
         75%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         100%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_blog {
         0%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         25%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         50%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
         75%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
         100%{
-            left: 26.6vh;
-            top: 17.5vh;
+            left: 24vh;
+            top: 15vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_about {
         0%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
         25%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
         50%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
         75%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         100%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_about {
         0%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         25%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         50%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
         75%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
         100%{
-            left: 17.5vh;
-            top: 26.6vh;
+            left: 15vh;
+            top: 24vh;
             opacity: 1;
         }
     }
     @keyframes hide_buttonMenu_connect {
         0%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
         25%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
         50%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
         75%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         100%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
     }
     @keyframes show_buttonMenu_connect {
         0%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         25%{
-            left: 5vh;
-            top: 5vh;
+            left: 2.5vh;
+            top: 2.5vh;
             opacity: 0;
         }
         50%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
         75%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
         100%{
-            left: 5vh;
-            top: 30vh;
+            left: 2.5vh;
+            top: 27.5vh;
             opacity: 1;
         }
     }
@@ -454,7 +469,12 @@
         animation-fill-mode: forwards;
     }
     .animation__hide_buttonMenu_projects{
-        left: 0;
+        width: 10vh;
+        height: 10vh;
+        margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        left: 27.5vh;
+        top: 2.5vh;
+
         animation-name: shrink_buttonMenu, hide_buttonMenu_projects;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
@@ -464,8 +484,7 @@
         animation-fill-mode: forwards,forwards;
     }
     .animation__show_buttonMenu_projects{
-        left: 0;
-        animation-name: unshrink_buttonMenu, show_buttonMenu_projects;
+        animation-name: expand_buttonMenu, show_buttonMenu_projects;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
         animation-delay: 0s,0s;
@@ -474,61 +493,74 @@
         animation-fill-mode: forwards,forwards;
     }
     .animation__hide_buttonMenu_blog{
-        left: 24vmin;
+        width: 10vh;
+        height: 10vh;
+        margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        left: 24vh;
+        top: 15vh;
+
         animation-name: shrink_buttonMenu, hide_buttonMenu_blog;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.1s,0.1s;
         animation-direction: normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
     }
     .animation__show_buttonMenu_blog{
-        left: 0;
-        animation-name: unshrink_buttonMenu, show_buttonMenu_blog;
+        animation-name: expand_buttonMenu, show_buttonMenu_blog;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.1s,0.1s;
         animation-direction:normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
     }
     .animation__hide_buttonMenu_about{
-        left: 48vmin;
+        width: 10vh;
+        height: 10vh;
+        margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        left: 15vh;
+        top: 24vh;
+
         animation-name: shrink_buttonMenu, hide_buttonMenu_about;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.2s,0.2s;
         animation-direction: normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
     }
     .animation__show_buttonMenu_about{
-        left: 0;
-        animation-name: unshrink_buttonMenu, show_buttonMenu_about;
+        /*left: 0;*/
+        animation-name: expand_buttonMenu, show_buttonMenu_about;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.2s,0.2s;
         animation-direction:normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
     }
     .animation__hide_buttonMenu_connect{
-        left: 72vmin;
+        width: 10vh;
+        height: 10vh;
+        margin: 2.5vh 2.5vh 2.5vh 2.5vh;
+        left: 2.5vh;
+        top: 27.5vh;
+
         animation-name: shrink_buttonMenu, hide_buttonMenu_connect;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.3s,0.3s;
         animation-direction: normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
     }
     .animation__show_buttonMenu_connect{
-        left: 0;
-        animation-name: unshrink_buttonMenu, show_buttonMenu_connect;
+        animation-name: expand_buttonMenu, show_buttonMenu_connect;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0s,0s;
+        animation-delay: 0.3s,0.3s;
         animation-direction:normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
