@@ -158,7 +158,10 @@ function listener_pageReload(){
 document.addEventListener("scroll", listener_toggleMenu, false);
 
 if(mq.matches){ buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false); }
-else{ buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false); }
+else{
+    buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
+    containerMenu.addEventListener("mouseleave", hideMenu, false);
+}
 
 mq.addListener(listener_pageReload);
 for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("click", listener_toggleDescription, false); }
