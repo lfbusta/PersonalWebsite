@@ -22,6 +22,7 @@
    --color-text3: rgb(214, 72, 46);
    --color-text3_50: rgba(214, 72, 46,0.5);
    --color-shadow: rgba(0, 0, 0, 0.5);
+   --color-test: rgba(0, 0, 0, 0.25);
 }
 /* ===================================== ELEMENTS ===================================== */
 /* ==================================================================================== */
@@ -114,6 +115,7 @@ footer{
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
     /*box-shadow: 0 0vmin 2vmin red;*/
 }
+
 .screenshotContainer{
     display: flex;
     flex-direction: column;
@@ -121,12 +123,52 @@ footer{
     align-items: center;
     overflow: hidden;
 }
+
 .descriptionContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+.descriptionSubContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_title{
+    width: 92%;
+    padding: 4%;
+    text-align: center;
+    /*align-self: flex-start;*/
+
+    /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_content_about{
+    flex: 2;
+    margin-left: 4%;
+    margin-right: 2%;
+
+    /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_content_tech{
+    flex: 1;
+    margin-left: 2%;
+    margin-right: 4%;
+
+    /*background-color: var(--color-test);*/
 }
 .description{
     display: flex;
