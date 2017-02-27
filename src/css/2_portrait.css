@@ -54,62 +54,55 @@
     .descriptionContainer{
         position: absolute;
         /*width: 100%;*/
-        /*opacity: 0;*/
+        opacity: 0;
         /*background-color: red;*/
     }
-    .description{
-        padding: 5% 5% 5% 5%;
-        /*background-color: red;*/
+    .descriptionSubContainer_content{
+        flex-direction: column;
+    }
+    .aboutLong{
+        display: none;
     }
     .techNames{
         display: none;
-        visibility: hidden;
     }
     .techLogos{
-        align-items: center;
-        /*background-color: blue;*/
+        justify-content: flex-end;
+        padding: 1vw 0 1vw 1vw;
+        /*flex: 1;*/
     }
-    .logoMini{
-        /*background-color: blue;*/
-        /*filter: saturate(0);*/
+    .techLogos > img{
+        height: 8vw;
+        margin: 0 1vw 0 1vw;
     }
 
     .horContainer1 > .screenshotContainer{
-        /*height: 85%;*/
+        width: 85vw;
         height: 32vh;
-        /*background-color: white;*/
     }
     .horContainer2 > .screenshotContainer{
-        /*height: 90%;*/
+        width: 90vw;
+        height: 34vh;
+    }
+    .horContainer1 .imgScreenshot{
+        /*width: 85vw;*/
+        height: 32vh;
+    }
+    .horContainer2 .imgScreenshot{
+        /*width: 90vw;*/
         height: 34vh;
     }
     .horContainer1 > .descriptionContainer{
-        /*width: 75%;*/
-        height: 86%;
-        background-color: var(--color-background1_25);
+        width: 85vw;
+        height: 32vh;
+        background-color: var(--color-background1_75);
     }
     .horContainer2 > .descriptionContainer{
-        /*width: 80%;*/
-        height: 90%;
-        background-color: var(--color-background2_25);
-    }
-    .horContainer1 .imgScreenshot{
-        width: 85vw;
-    }
-    .horContainer2 .imgScreenshot{
         width: 90vw;
+        height: 34vh;
+        background-color: var(--color-background2_75);
     }
 
-    .horContainer1 .descriptionContainer{
-        width: 85vw;
-        height: 54vw;
-        max-height: 32vh;
-    }
-    .horContainer2 .descriptionContainer{
-        width: 90vw;
-        height: 57vw;
-        max-height: 34vh;
-    }
     .frontScreen{
         position: absolute;
         display: flex;

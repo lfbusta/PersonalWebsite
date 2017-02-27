@@ -13,9 +13,9 @@
 /* ==================================================================================== */
 :root{
    --color-background1: rgb(8, 42, 74);
-   --color-background1_25: rgba(8, 42, 74,0.5);
+   --color-background1_75: rgba(8, 42, 74,0.75);
    --color-background2: rgb(37, 96, 125);
-   --color-background2_25: rgba(37, 96, 125,0.5);
+   --color-background2_75: rgba(37, 96, 125,0.75);
    --color-text0_90: rgba(255, 255, 255,0.9);
    --color-text1: rgb(254, 241, 206);
    --color-text2: rgb(240, 145, 51);
@@ -134,18 +134,14 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    /*background-color: var(--color-test);*/
+    /*overflow: scroll;*/
+    /*background-color: red;*/
 }
 .descriptionSubContainer{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-
-    /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_title{
     width: 92%;
@@ -159,8 +155,7 @@ footer{
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-    /*background-color: var(--color-test);*/
+    height: 100%;
 }
 .descriptionSubContainer_content_about{
     flex: 3;
@@ -170,31 +165,16 @@ footer{
     /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_content_tech{
-    /*flex: 1;*/
+    /*height: 100%;*/
     flex-direction: row;
     margin-left: 2%;
     margin-right: 4%;
-
-    /*background-color: var(--color-test);*/
 }
 .techNames{
     display: flex;
-    flex-direction: column;
 }
 .techLogos{
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 100%;
-}
-.description{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-.logoMini{
-    height: 5vmin;
 }
 /*.................................... subsection 2 ....................................*/
 
@@ -207,6 +187,9 @@ footer{
 }
 .removed{
     display: none;
+}
+.blured{
+    filter: blur(1vmin) grayscale(50%);
 }
 /*.................................... subsection 2 ....................................*/
 
