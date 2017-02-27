@@ -48,13 +48,16 @@ body{
 }
 h1{}
 h2{}
-h3{}
+h3{ font-weight: bold; }
 p{
     text-align: justify;
 }
 a{
     text-decoration: none;
     font-weight: bold;
+}
+table{
+    /*background-color: red;*/
 }
 button{
     outline: none;
@@ -167,19 +170,31 @@ footer{
     /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_content_tech{
-    flex: 1;
+    /*flex: 1;*/
+    flex-direction: row;
     margin-left: 2%;
     margin-right: 4%;
+
     /*background-color: var(--color-test);*/
 }
-.descriptionSubContainer_content_tech > p{
-    text-align: right;
+.techNames{
+    display: flex;
+    flex-direction: column;
+}
+.techLogos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
 }
 .description{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+.logoMini{
+    height: 5vmin;
 }
 /*.................................... subsection 2 ....................................*/
 
@@ -197,6 +212,11 @@ footer{
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
+
+#buttonMenu_blog{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_about{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_connect{ filter: grayscale(100%) opacity(50%); }
+
 
 /* ================================== INTERACTIONS ==================================== */
 /* ==================================================================================== */
