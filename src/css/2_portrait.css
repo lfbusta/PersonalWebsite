@@ -10,8 +10,11 @@
     body{}
     h1{}
     h2{ font-size: 5vw; }
-    h3{}
-    p{ font-size: 3vw; }
+    h3{
+        font-size: 3vw;
+        margin: 1vw 0 1vw 0;
+    }
+    p{ font-size: 4vw; }
     a{}
     button{}
     footer{
@@ -51,12 +54,24 @@
     .descriptionContainer{
         position: absolute;
         /*width: 100%;*/
-        opacity: 0;
+        /*opacity: 0;*/
         /*background-color: red;*/
     }
     .description{
         padding: 5% 5% 5% 5%;
         /*background-color: red;*/
+    }
+    .techNames{
+        display: none;
+        visibility: hidden;
+    }
+    .techLogos{
+        align-items: center;
+        /*background-color: blue;*/
+    }
+    .logoMini{
+        /*background-color: blue;*/
+        /*filter: saturate(0);*/
     }
 
     .horContainer1 > .screenshotContainer{
