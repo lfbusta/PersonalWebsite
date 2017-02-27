@@ -56,6 +56,9 @@ a{
     text-decoration: none;
     font-weight: bold;
 }
+table{
+    /*background-color: red;*/
+}
 button{
     outline: none;
     border: none;
@@ -103,6 +106,7 @@ footer{
     display: flex;
     flex: 1;
     align-items: center;
+    width: 100vw;
     height: 40vh;
     /*padding: 2.5vh 0 2.5vh 0;*/
 }
@@ -117,11 +121,12 @@ footer{
 }
 
 .screenshotContainer{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
+    /*background-color: var(--color-test);*/
 }
 
 .descriptionContainer{
@@ -130,6 +135,7 @@ footer{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer{
     position: relative;
@@ -167,14 +173,19 @@ footer{
     flex: 1;
     margin-left: 2%;
     margin-right: 4%;
-
     /*background-color: var(--color-test);*/
+}
+.descriptionSubContainer_content_tech > p{
+    text-align: right;
 }
 .description{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+.logoMini{
+    height: 5vmin;
 }
 /*.................................... subsection 2 ....................................*/
 
@@ -193,6 +204,11 @@ footer{
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
 
+#buttonMenu_blog{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_about{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_connect{ filter: grayscale(100%) opacity(50%); }
+
+
 /* ================================== INTERACTIONS ==================================== */
 /* ==================================================================================== */
 
@@ -200,3 +216,22 @@ footer{
 
 /* =================================== ANIMATIONS ===================================== */
 /* ==================================================================================== */
+
+@keyframes fadePage {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.animation__fadePage{
+    animation-name: fadePage;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

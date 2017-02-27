@@ -158,22 +158,17 @@ function listener_pageReload(){
 document.addEventListener("scroll", listener_toggleMenu, false);
 
 if(mq.matches){ buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false); }
-else{ buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false); }
+else{
+    buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
+    containerMenu.addEventListener("mouseleave", hideMenu, false);
+}
 
 mq.addListener(listener_pageReload);
 for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("click", listener_toggleDescription, false); }
 // ===================================== ONLOAD =========================================
 // ======================================================================================
 
-// window.onload = function(){
-//     for(let i=0; i<buttonMenu.length; i++){
-//         window.setTimeout(e=>{
-//             buttonMenu[i].classList.remove("hidden");
-//         },200+i*100);
-//     }
-//     for(let i=0; i<screenshots.length; i++){
-//         window.setTimeout(e=>{
-//             screenshots[i].classList.remove("hidden");
-//         },2000+i*100);
-//     }
-// }
+window.onload = function(){
+    replaceClass(body.classList,"removed","animation__fadePage");
+    // window.setTimeout(e=>{},100);
+}
