@@ -48,7 +48,7 @@ body{
 }
 h1{}
 h2{}
-h3{}
+h3{ font-weight: bold; }
 p{
     text-align: justify;
 }
@@ -170,13 +170,22 @@ footer{
     /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_content_tech{
-    flex: 1;
+    /*flex: 1;*/
+    flex-direction: row;
     margin-left: 2%;
     margin-right: 4%;
+
     /*background-color: var(--color-test);*/
 }
-.descriptionSubContainer_content_tech > p{
-    text-align: right;
+.techNames{
+    display: flex;
+    flex-direction: column;
+}
+.techLogos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
 }
 .description{
     display: flex;
