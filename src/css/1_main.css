@@ -56,6 +56,9 @@ a{
     text-decoration: none;
     font-weight: bold;
 }
+table{
+    /*background-color: red;*/
+}
 button{
     outline: none;
     border: none;
@@ -180,6 +183,9 @@ footer{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+.logoMini{
+    height: 5vmin;
 }
 /*.................................... subsection 2 ....................................*/
 
