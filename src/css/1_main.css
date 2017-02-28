@@ -13,9 +13,9 @@
 /* ==================================================================================== */
 :root{
    --color-background1: rgb(8, 42, 74);
-   --color-background1_25: rgba(8, 42, 74,0.5);
+   --color-background1_75: rgba(8, 42, 74,0.75);
    --color-background2: rgb(37, 96, 125);
-   --color-background2_25: rgba(37, 96, 125,0.5);
+   --color-background2_75: rgba(37, 96, 125,0.75);
    --color-text0_90: rgba(255, 255, 255,0.9);
    --color-text1: rgb(254, 241, 206);
    --color-text2: rgb(240, 145, 51);
@@ -48,13 +48,16 @@ body{
 }
 h1{}
 h2{}
-h3{}
+h3{ font-weight: bold; }
 p{
     text-align: justify;
 }
 a{
     text-decoration: none;
     font-weight: bold;
+}
+table{
+    /*background-color: red;*/
 }
 button{
     outline: none;
@@ -131,55 +134,31 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    /*background-color: var(--color-test);*/
+    /*overflow: scroll;*/
+    /*background-color: red;*/
 }
 .descriptionSubContainer{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-
-    /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_title{
-    width: 92%;
-    padding: 4%;
-    text-align: center;
-    /*align-self: flex-start;*/
-
-    /*background-color: var(--color-test);*/
+    display: flex;
 }
 .descriptionSubContainer_content{
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    /*background-color: var(--color-test);*/
 }
 .descriptionSubContainer_content_about{
-    flex: 3;
-    margin-left: 4%;
-    margin-right: 2%;
-
-    /*background-color: var(--color-test);*/
+    display: flex;
 }
 .descriptionSubContainer_content_tech{
-    flex: 1;
-    margin-left: 2%;
-    margin-right: 4%;
-    /*background-color: var(--color-test);*/
-}
-.descriptionSubContainer_content_tech > p{
-    text-align: right;
-}
-.description{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+}
+.techNames{
+    display: flex;
+}
+.techLogos{
+    display: flex;
 }
 /*.................................... subsection 2 ....................................*/
 
@@ -193,10 +172,21 @@ footer{
 .removed{
     display: none;
 }
+.blured{
+    filter: blur(1vmin);
+}
+.grayed{
+    filter:  grayscale(100%);
+}
 /*.................................... subsection 2 ....................................*/
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
+
+#buttonMenu_blog{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_about{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_connect{ filter: grayscale(100%) opacity(50%); }
+
 
 /* ================================== INTERACTIONS ==================================== */
 /* ==================================================================================== */
@@ -205,3 +195,22 @@ footer{
 
 /* =================================== ANIMATIONS ===================================== */
 /* ==================================================================================== */
+
+@keyframes fadePage {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.animation__fadePage{
+    animation-name: fadePage;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
