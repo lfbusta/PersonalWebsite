@@ -18,19 +18,21 @@
     a{}
     button{}
     footer{
-        justify-content: center;
         height: 16vh;
+        align-items: center;
     }
     /* ===================================== CLASSES ====================================== */
     /* ==================================================================================== */
+
+    .main{
+        flex-direction: column;
+    }
 
     /* ------------------------------------ section 1 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
 
     /*.................................... subsection 1 ....................................*/
-    .main{
-        flex-direction: column;
-    }
+
     .containerMenu{
         top: 0;
         width: 100%;
@@ -45,7 +47,29 @@
     .horContainer{
         justify-content: center;
     }
-
+    /*.................................... subsection 1 ....................................*/
+    .screenshotContainer{
+        height: 100%;
+        align-items: center;
+        /*background-color: green;*/
+    }
+    .horContainer1 > .screenshotContainer{
+        width: 85vw;
+        height: 32vh;
+    }
+    .horContainer2 > .screenshotContainer{
+        width: 90vw;
+        height: 34vh;
+    }
+    .horContainer1 .imgScreenshot{
+        /*width: 85vw;*/
+        height: 32vh;
+    }
+    .horContainer2 .imgScreenshot{
+        /*width: 90vw;*/
+        height: 34vh;
+    }
+    /*.................................... subsection 2 ....................................*/
     .descriptionContainer{
         position: absolute;
         width: 100%;
@@ -93,44 +117,33 @@
         height: 6vw;
         margin: 0 1vw 0 1vw;
     }
-
-    .screenshotContainer{
-        height: 100%;
-        align-items: center;
-        /*background-color: green;*/
-    }
-    .horContainer1 > .screenshotContainer{
-        width: 85vw;
-        height: 32vh;
-    }
-    .horContainer2 > .screenshotContainer{
-        width: 90vw;
-        height: 34vh;
-    }
-    .horContainer1 .imgScreenshot{
-        /*width: 85vw;*/
-        height: 32vh;
-    }
-    .horContainer2 .imgScreenshot{
-        /*width: 90vw;*/
-        height: 34vh;
-    }
-
+    /*.................................... subsection 1 ....................................*/
     .frontScreen{
         position: absolute;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: flex-end;
-        width: 90%;
-        height: 65%;
-        padding: 5% 5% 5% 5%;
+        width: 100vw;
+        height: 40vh;
         z-index: 1;
 
         /*background-color: red;*/
         opacity: 0;
     }
-    /*.................................... subsection 1 ....................................*/
-
+    .frontScreen > a{
+        font-size: 4vw;
+        padding: 1vw;
+    }
+    /* ------------------------------------- footer --------------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+    .contactIcons{
+        width: 80%;
+        padding: 0 10% 0 10%;
+    }
+    .contactIcons img{
+        height: 5vh;
+        filter: invert(1);
+    }
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
 
