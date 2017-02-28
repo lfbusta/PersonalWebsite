@@ -183,9 +183,9 @@ footer{
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
 
-#buttonMenu_blog{ filter: grayscale(100%) opacity(50%); }
-#buttonMenu_about{ filter: grayscale(100%) opacity(50%); }
-#buttonMenu_connect{ filter: grayscale(100%) opacity(50%); }
+#buttonMenu_blog{ filter: opacity(50%); }
+#buttonMenu_about{ filter: opacity(50%); }
+#buttonMenu_connect{ filter: opacity(50%); }
 
 
 /* ================================== INTERACTIONS ==================================== */
