@@ -47,7 +47,6 @@
     .horContainer{
         justify-content: center;
     }
-
     /*.................................... subsection 1 ....................................*/
     .screenshotContainer{
         height: 100%;
@@ -122,15 +121,18 @@
     .frontScreen{
         position: absolute;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: flex-end;
-        width: 90%;
-        height: 65%;
-        padding: 5% 5% 5% 5%;
+        width: 100vw;
+        height: 40vh;
         z-index: 1;
 
         /*background-color: red;*/
         opacity: 0;
+    }
+    .frontScreen > a{
+        font-size: 4vw;
+        padding: 1vw;
     }
     /* ------------------------------------- footer --------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
