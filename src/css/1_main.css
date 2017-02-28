@@ -66,10 +66,11 @@ button{
 }
 footer{
     display: flex;
+    flex-direction: column;
     width: 100%;
     z-index: 2;
     overflow: hidden;
-    align-items: center;
+    justify-content: space-around;
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
@@ -186,7 +187,6 @@ footer{
 
 #buttonMenu_blog{ filter: opacity(50%); }
 #buttonMenu_about{ filter: opacity(50%); }
-#buttonMenu_connect{ filter: opacity(50%); }
 
 
 /* ================================== INTERACTIONS ==================================== */
