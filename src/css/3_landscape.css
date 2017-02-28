@@ -76,7 +76,7 @@
     }
     .descriptionSubContainer_content_about{
         flex: 1;
-        /*background-color: var(--color-test);*/
+        padding-right: 2%;
     }
     .descriptionSubContainer_content_tech{
         /*padding-right: 2vh;*/
