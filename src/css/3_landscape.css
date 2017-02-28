@@ -657,3 +657,11 @@
         animation-fill-mode: forwards;
     }
 }
+@media (max-width: 128vh){
+    .descriptionSubContainer_content_tech{
+        display: none;
+    }
+    .descriptionSubContainer_content{
+        justify-content: center;
+    }
+}
