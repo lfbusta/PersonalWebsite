@@ -45,71 +45,77 @@
     .horContainer{
         justify-content: center;
     }
+
+    .descriptionContainer{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    .horContainer1 > .descriptionContainer{
+        background-color: var(--color-background1_75);
+    }
+    .horContainer2 > .descriptionContainer{
+        background-color: var(--color-background2_75);
+    }
+    .descriptionSubContainer{
+        width: 100%;
+        height: 100%;
+    }
+    .descriptionSubContainer_title{
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2%;
+    }
+    .descriptionSubContainer_content{
+        flex-direction: column;
+        flex: 1;
+        padding: 0 6% 4% 6%;
+    }
+    .descriptionSubContainer_content_about{
+        flex: 1;
+    }
+    .descriptionSubContainer_content_tech{
+        align-self: flex-end;
+    }
+    .aboutLong{
+        display: none;
+    }
+    .techNames{
+        display: none;
+    }
+    .techLogos{
+        justify-content: flex-end;
+        padding: 1vw 0 1vw 1vw;
+        /*flex: 1;*/
+    }
+    .techLogos > img{
+        height: 6vw;
+        margin: 0 1vw 0 1vw;
+    }
+
     .screenshotContainer{
         height: 100%;
         align-items: center;
         /*background-color: green;*/
     }
-
-    .descriptionContainer{
-        position: absolute;
-        /*width: 100%;*/
-        /*opacity: 0;*/
-        /*background-color: red;*/
-    }
-    .description{
-        padding: 5% 5% 5% 5%;
-        /*background-color: red;*/
-    }
-    .techNames{
-        display: none;
-        visibility: hidden;
-    }
-    .techLogos{
-        align-items: center;
-        /*background-color: blue;*/
-    }
-    .logoMini{
-        /*background-color: blue;*/
-        /*filter: saturate(0);*/
-    }
-
     .horContainer1 > .screenshotContainer{
-        /*height: 85%;*/
+        width: 85vw;
         height: 32vh;
-        /*background-color: white;*/
     }
     .horContainer2 > .screenshotContainer{
-        /*height: 90%;*/
+        width: 90vw;
         height: 34vh;
     }
-    .horContainer1 > .descriptionContainer{
-        /*width: 75%;*/
-        height: 86%;
-        background-color: var(--color-background1_25);
-    }
-    .horContainer2 > .descriptionContainer{
-        /*width: 80%;*/
-        height: 90%;
-        background-color: var(--color-background2_25);
-    }
     .horContainer1 .imgScreenshot{
-        width: 85vw;
+        /*width: 85vw;*/
+        height: 32vh;
     }
     .horContainer2 .imgScreenshot{
-        width: 90vw;
+        /*width: 90vw;*/
+        height: 34vh;
     }
 
-    .horContainer1 .descriptionContainer{
-        width: 85vw;
-        height: 54vw;
-        max-height: 32vh;
-    }
-    .horContainer2 .descriptionContainer{
-        width: 90vw;
-        height: 57vw;
-        max-height: 34vh;
-    }
     .frontScreen{
         position: absolute;
         display: flex;
