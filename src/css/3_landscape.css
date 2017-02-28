@@ -57,6 +57,13 @@
     .horContainer{
         justify-content: flex-start;
     }
+    .horContainer1{
+        flex-direction: row;
+    }
+    .horContainer2{
+        flex-direction: row-reverse;
+    }
+
     .descriptionContainer{
         flex: 1;
         height: 100%;
@@ -119,18 +126,12 @@
 
         filter: grayscale(100%) opacity(0.50);
         transition: filter 0.25s ease-in-out;
-
-        background-color: green;
     }
     .imgScreenshot{
-        width: 100%;
+        /*width: 100%;*/
+        height: 41vh;
     }
-    .horContainer1{
-        flex-direction: row;
-    }
-    .horContainer2{
-        flex-direction: row-reverse;
-    }
+
     .frontScreen{
         display: none;
     }
@@ -671,6 +672,9 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
+
+    /* ================================= MEDIA QUERIES ==================================== */
+    /* ==================================================================================== */
 
     @media (max-width: 128vh){
         .descriptionSubContainer_content_tech{
