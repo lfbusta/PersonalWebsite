@@ -45,11 +45,6 @@
     .horContainer{
         justify-content: center;
     }
-    .screenshotContainer{
-        height: 100%;
-        align-items: center;
-        /*background-color: green;*/
-    }
 
     .descriptionContainer{
         position: absolute;
@@ -99,6 +94,11 @@
         margin: 0 1vw 0 1vw;
     }
 
+    .screenshotContainer{
+        height: 100%;
+        align-items: center;
+        /*background-color: green;*/
+    }
     .horContainer1 > .screenshotContainer{
         width: 85vw;
         height: 32vh;

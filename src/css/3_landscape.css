@@ -55,6 +55,59 @@
     .horContainer{
         justify-content: flex-start;
     }
+    .descriptionContainer{
+        flex: 1;
+        height: 100%;
+    }
+    .descriptionSubContainer{
+        width: 96%;
+        height: 96%;
+        padding: 2%;
+    }
+    .descriptionSubContainer_title{
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 2%;
+    }
+    .descriptionSubContainer_content{
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+    .descriptionSubContainer_content_about{
+        flex: 1;
+        /*background-color: var(--color-test);*/
+    }
+    .descriptionSubContainer_content_tech{
+        /*padding-right: 2vh;*/
+        /*background-color: var(--color-test);*/
+    }
+    .aboutShort{
+        display: none;
+    }
+    .techNames{
+        padding-right: 2vh;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .techNames > p{
+        text-align: right;
+    }
+    .techLogos{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        /*width: 10vh;*/
+        /*background-color: red;*/
+    }
+    .techLogos > img{
+        height: 3vh;
+        object-fit: scale-down;
+        filter: grayscale(100%);
+
+        transition: filter 0.1s ease-in-out;
+    }
+
     .screenshotContainer{
         height: 40vh;
         width: 64vh;
@@ -63,11 +116,6 @@
         transition: filter 0.25s ease-in-out;
 
         background-color: green;
-    }
-    .descriptionContainer{
-        flex: 1;
-        height: 100%;
-        margin: 0 2vw 0 2vw;
     }
     .imgScreenshot{
         width: 100%;
@@ -96,6 +144,11 @@
     }
     .buttonMenu_main:hover{
         filter: saturate(100%) contrast(100%);
+    }
+    .techLogos>img:hover{
+        filter:grayscale(0);
+        /*height: 5vh;*/
+
     }
     /* =================================== ANIMATIONS ===================================== */
     /* ==================================================================================== */
