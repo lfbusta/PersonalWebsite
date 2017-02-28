@@ -18,19 +18,21 @@
     a{}
     button{}
     footer{
-        justify-content: center;
         height: 16vh;
+        align-items: center;
     }
     /* ===================================== CLASSES ====================================== */
     /* ==================================================================================== */
+
+    .main{
+        flex-direction: column;
+    }
 
     /* ------------------------------------ section 1 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
 
     /*.................................... subsection 1 ....................................*/
-    .main{
-        flex-direction: column;
-    }
+
     .containerMenu{
         top: 0;
         width: 100%;
@@ -46,6 +48,29 @@
         justify-content: center;
     }
 
+    /*.................................... subsection 1 ....................................*/
+    .screenshotContainer{
+        height: 100%;
+        align-items: center;
+        /*background-color: green;*/
+    }
+    .horContainer1 > .screenshotContainer{
+        width: 85vw;
+        height: 32vh;
+    }
+    .horContainer2 > .screenshotContainer{
+        width: 90vw;
+        height: 34vh;
+    }
+    .horContainer1 .imgScreenshot{
+        /*width: 85vw;*/
+        height: 32vh;
+    }
+    .horContainer2 .imgScreenshot{
+        /*width: 90vw;*/
+        height: 34vh;
+    }
+    /*.................................... subsection 2 ....................................*/
     .descriptionContainer{
         position: absolute;
         width: 100%;
@@ -93,29 +118,7 @@
         height: 6vw;
         margin: 0 1vw 0 1vw;
     }
-
-    .screenshotContainer{
-        height: 100%;
-        align-items: center;
-        /*background-color: green;*/
-    }
-    .horContainer1 > .screenshotContainer{
-        width: 85vw;
-        height: 32vh;
-    }
-    .horContainer2 > .screenshotContainer{
-        width: 90vw;
-        height: 34vh;
-    }
-    .horContainer1 .imgScreenshot{
-        /*width: 85vw;*/
-        height: 32vh;
-    }
-    .horContainer2 .imgScreenshot{
-        /*width: 90vw;*/
-        height: 34vh;
-    }
-
+    /*.................................... subsection 1 ....................................*/
     .frontScreen{
         position: absolute;
         display: flex;
@@ -129,8 +132,16 @@
         /*background-color: red;*/
         opacity: 0;
     }
-    /*.................................... subsection 1 ....................................*/
-
+    /* ------------------------------------- footer --------------------------------------- */
+    /* ------------------------------------------------------------------------------------ */
+    .contactIcons{
+        width: 80%;
+        padding: 0 10% 0 10%;
+    }
+    .contactIcons img{
+        height: 5vh;
+        filter: invert(1);
+    }
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
 
