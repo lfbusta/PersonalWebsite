@@ -77,6 +77,9 @@
     .descriptionSubContainer_content_about{
         flex: 1;
         padding-right: 2%;
+        padding-left: 2%;
+        align-items: center;
+        /*background-color: red;*/
     }
     .descriptionSubContainer_content_tech{
         /*padding-right: 2vh;*/
