@@ -39,7 +39,7 @@
         height: 30vw;
     }
     .buttonMenu{
-        /*margin: 0 4vmin 0 4vmin;*/
+        top: 0;
     }
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -73,6 +73,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        left: 0;
         opacity: 0;
     }
     .horContainer1 > .descriptionContainer{
@@ -124,6 +125,7 @@
         align-items: flex-end;
         width: 100vw;
         height: 40vh;
+        left: 0;
         z-index: 1;
 
         /*background-color: red;*/
