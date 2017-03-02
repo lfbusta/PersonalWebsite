@@ -147,7 +147,7 @@
     }
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
-
+    
     /* =================================== ANIMATIONS ===================================== */
     /* ==================================================================================== */
 
@@ -597,7 +597,7 @@
         animation-delay: 0s;
         animation-direction: normal;
         animation-iteration-count: 1;
-        animation-fill-mode: forwards;;
+        animation-fill-mode: forwards;
     }
     .animation__hide_screenshot{
         animation-name: hide_screenshot;
