@@ -30,6 +30,7 @@ html{
     display: flex;
     justify-content: center;
     background-color: var(--color-background1);
+    overflow-x: hidden;
 }
 header{
     display: flex;
