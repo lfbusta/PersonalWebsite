@@ -44,7 +44,6 @@ body{
     display: flex;
     flex-direction: column;
     width: 100vw;
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 h1{}
@@ -117,7 +116,7 @@ footer{
     /*padding: 2.5vh 0 2.5vh 0;*/
 }
 .horContainer1{
-    background-color: none;
+    background-color: transparent;
 }
 .horContainer2{
     z-index: 2;
