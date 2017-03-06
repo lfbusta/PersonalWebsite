@@ -1,3 +1,6 @@
+import ScrollReveal from "scrollreveal";
+import "./footer";
+
 // ===================================== EXAMPLES =======================================
 // ======================================================================================
 //
@@ -16,7 +19,7 @@ function test(){ console.log("Test Function"); }
 // ==================================== VARIABLES =======================================
 // ======================================================================================
 let menuShow = true;
-var mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
+let mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
 const body = document.getElementsByTagName("body")[0];
 const header = document.getElementsByTagName("header")[0];
 
@@ -33,8 +36,8 @@ const frontScreens = document.getElementsByClassName("frontScreen");
 // ======================================================================================
 
 if(mq.matches){
-    window.sr = ScrollReveal({ distance: '0', opacity: 0.5, origin: 'left', reset: true, scale: 1, viewFactor: 1.2 });
-    sr.reveal('.horContainer');
+    window.sr = ScrollReveal({ distance: "0", opacity: 0.5, origin: "left", reset: true, scale: 1, viewFactor: 1.2 });
+    sr.reveal(".horContainer");
 } else{
     const common = {
         distance: "40vw",
@@ -50,12 +53,12 @@ if(mq.matches){
     const horContainer1s = document.getElementsByClassName("horContainer1");
     const horContainer2s = document.getElementsByClassName("horContainer2");
     for(let i=0; i<horContainer1s.length; i++){
-        horContainer1s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromLeft");
-        horContainer1s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromRight");
+        horContainer1s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromLeft");
+        horContainer1s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromRight");
     }
     for(let i=0; i<horContainer2s.length; i++){
-        horContainer2s[i].getElementsByClassName('screenshotContainer')[0].classList.add("slideFirstFromRight");
-        horContainer2s[i].getElementsByClassName('descriptionContainer')[0].classList.add("slideSecondFromLeft");
+        horContainer2s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromRight");
+        horContainer2s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromLeft");
     }
     sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
     sr.reveal(".slideSecondFromRight", { origin: "right", delay: 250 });
@@ -67,7 +70,7 @@ if(mq.matches){
 // ======================================================================================
 
 function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
 }
 function replaceClass(classList,className1,className2){
     // This function will replace className1 with className2
@@ -170,5 +173,5 @@ for(let i=0; i<frontScreens.length; i++){ frontScreens[i].addEventListener("clic
 
 window.onload = function(){
     replaceClass(body.classList,"removed","animation__fadePage");
-    // window.setTimeout(e=>{},100);
 }
+// window.setTimeout(e=>{},100);
