@@ -7,6 +7,8 @@ deploy_build
 node_modules
 package.json
 gulpfile.js
+.babelrc
+webpack.config*
 # ================== FIREBASE =================
 .firebaserc
 database.rules.json
