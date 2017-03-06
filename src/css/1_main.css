@@ -72,11 +72,9 @@ button{
 }
 footer{
     display: flex;
-    flex-direction: column;
     width: 100%;
     z-index: 2;
     overflow: hidden;
-    justify-content: space-around;
     background-color: var(--color-background2);
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
@@ -174,6 +172,12 @@ footer{
 }
 /* ------------------------------------- footer --------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
+.footerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
 .contactIcons{
     display: flex;
     justify-content: space-around;
