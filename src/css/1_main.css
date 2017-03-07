@@ -172,7 +172,7 @@ footer{
 }
 /* ------------------------------------- footer --------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
-.footerContainer{
+.containerFooter{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
