@@ -1,4 +1,5 @@
 import ScrollReveal from "scrollreveal";
+import "./menu";
 import "./footer";
 
 // ===================================== EXAMPLES =======================================
