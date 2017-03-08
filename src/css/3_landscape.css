@@ -23,16 +23,11 @@
 
     /* ------------------------------------ section 1 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-    .main{
-        flex-direction: column;
-    }
+
     /*.................................... subsection 1 ....................................*/
     .containerMenu{
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        left: 0;
-        top: 0;
         border-radius: 0 0 100% 0;
         /*background-color: green;*/
     }
@@ -66,71 +61,66 @@
         height: 100%;
     }
     .descriptionSubContainer{
-        width: 96%;
-        height: 96%;
-        padding: 2%;
-    }
-    .descriptionSubContainer_title{
-        justify-content: center;
-        align-items: flex-start;
-        padding-bottom: 2%;
-    }
-    .descriptionSubContainer_content{
-        display: flex;
-        height: 100%;
         width: 100%;
+        height: 100%;
     }
-    .horContainer1 .descriptionSubContainer_content{
+    .horContainer1 .descriptionSubContainer{
         flex-direction: row-reverse;
     }
-    .descriptionSubContainer_content_about{
-        flex: 1;
-        padding-right: 2%;
-        padding-left: 2%;
-        align-items: center;
-        /*background-color: red;*/
-    }
-    .horContainer1 .descriptionSubContainer_content_tech{
-        flex-direction: row-reverse;
+    .horContainer2 .descriptionSubContainer{
+        flex-direction: row;
     }
 
+    .descriptionSubContainer_content{
+        padding: 0 3% 4% 3%;
+    }
+    .descriptionSubContainer_content h2{
+        margin: 5%;
+    }
+    .aboutLong{
+        padding: 5%;
+        /*align-self: center;*/
+    }
     .aboutShort{
         display: none;
     }
-    .techNames{
-        flex-grow: 1;
+
+    .descriptionSubContainer_tech{
         flex-direction: column;
         justify-content: flex-end;
-        /*background-color: red;*/
+        padding: 0 3% 4% 3%;
     }
-    .techNames > p{
-        height: 3vh;
-        padding-bottom: 1.5vh;
-    }
-    .horContainer1 .techNames > p{
-        text-align: left;
-        padding-left: 2vh;
-    }
-    .horContainer2 .techNames > p{
-        text-align: right;
-        padding-right: 2vh;
-    }
-    .techLogos{
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: flex-end;
-        /*background-color: blue;*/
-    }
-    .techLogos > img{
-        height: 3vh;
-        padding-bottom: 1.5vh;
-
-        object-fit: scale-down;
-        filter: grayscale(100%);
-
+    .tech{
+        align-items: center;
+        filter: grayscale(100);
         transition: filter 0.1s ease-in-out;
     }
+    .techLogo{
+        height: 3vh;
+        margin: 0.5vh 0 0.5vh 0;
+        object-fit: scale-down;
 
+        /*background-color: red;*/
+    }
+    .techName{
+        height: 3vh;
+
+        /*background-color: red;*/
+    }
+    .horContainer1 .tech{
+        flex-direction: row;
+    }
+    .horContainer2 .tech{
+        flex-direction: row-reverse;
+    }
+    .horContainer1 .techName{
+        margin-left: auto;
+        padding-left: 2vh;
+    }
+    .horContainer2 .techName{
+        margin-right: auto;
+        padding-right: 2vh;
+    }
     .screenshotContainer{
         height: 40vh;
         width: 64vh;
@@ -150,7 +140,7 @@
 
     /* ------------------------------------- footer --------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-    .footerContainer{
+    .containerFooter{
         align-items: flex-end;
         height: 16vh;
         width: 98vw;
@@ -165,6 +155,9 @@
     }
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
+    #root{
+        flex-direction: column;
+    }
     #buttonMenu_stack{
         top: 2.5vh;
         left: 2.5vh;
@@ -180,7 +173,7 @@
     .buttonMenu_main:hover{
         filter: saturate(100%) contrast(100%);
     }
-    .techLogos>img:hover{
+    .tech:hover{
         filter:grayscale(0);
         /*height: 5vh;*/
 
@@ -703,11 +696,8 @@
     /* ==================================================================================== */
 
     @media (max-width: 128vh){
-        .descriptionSubContainer_content_tech{
+        .descriptionSubContainer_tech{
             display: none;
-        }
-        .descriptionSubContainer_content{
-            justify-content: center;
         }
     }
 

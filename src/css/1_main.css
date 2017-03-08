@@ -81,11 +81,6 @@ footer{
 /* ===================================== CLASSES ====================================== */
 /* ==================================================================================== */
 
-.main{
-    display: flex;
-    justify-content: center;
-}
-
 /* -------------------------------------- menu ---------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
 
@@ -94,8 +89,6 @@ footer{
 .containerMenu{
     position:fixed;
     display: flex;
-    align-items: center;
-    z-index: 10;
 }
 .buttonMenu{
     position: absolute;
@@ -106,6 +99,11 @@ footer{
 }
 /* ------------------------------------- content -------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
+.containerContent{
+    width: 100%;
+    height: 100%;
+    /*background-color: red;*/
+}
 .horContainer{
     position: relative;
     display: flex;
@@ -148,31 +146,27 @@ footer{
 .descriptionSubContainer{
     position: relative;
     display: flex;
-    flex-direction: column;
-}
-.descriptionSubContainer_title{
-    display: flex;
 }
 .descriptionSubContainer_content{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+
     transform-style: preserve-3d;
     backface-visibility: hidden;
 }
-.descriptionSubContainer_content_about{
+.descriptionSubContainer_content h2{}
+.descriptionSubContainer_content p{}
+.descriptionSubContainer_tech{
     display: flex;
 }
-.descriptionSubContainer_content_tech{
-    display: flex;
-}
-.techNames{
-    display: flex;
-}
-.techLogos{
+.tech{
     display: flex;
 }
 /* ------------------------------------- footer --------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
-.footerContainer{
+.containerFooter{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -199,7 +193,15 @@ footer{
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
-
+#root{
+    display: flex;
+    justify-content: center;
+}
+#react_menu{
+    z-index: 10;
+}
+#react_content{}
+#react_footer{}
 #buttonMenu_blog{ filter: opacity(50%); }
 #buttonMenu_about{ filter: opacity(50%); }
 
