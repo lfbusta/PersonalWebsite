@@ -81,11 +81,6 @@ footer{
 /* ===================================== CLASSES ====================================== */
 /* ==================================================================================== */
 
-.main{
-    display: flex;
-    justify-content: center;
-}
-
 /* -------------------------------------- menu ---------------------------------------- */
 /* ------------------------------------------------------------------------------------ */
 
@@ -94,8 +89,6 @@ footer{
 .containerMenu{
     position:fixed;
     display: flex;
-    align-items: center;
-    z-index: 10;
 }
 .buttonMenu{
     position: absolute;
@@ -204,7 +197,15 @@ footer{
 
 /* ======================================= IDs ======================================== */
 /* ==================================================================================== */
-
+#root{
+    display: flex;
+    justify-content: center;
+}
+#react_menu{
+    z-index: 10;
+}
+#react_content{}
+#react_footer{}
 #buttonMenu_blog{ filter: opacity(50%); }
 #buttonMenu_about{ filter: opacity(50%); }
 
