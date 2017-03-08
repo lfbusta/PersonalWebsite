@@ -146,26 +146,22 @@ footer{
 .descriptionSubContainer{
     position: relative;
     display: flex;
-    flex-direction: column;
-}
-.descriptionSubContainer_title{
-    display: flex;
 }
 .descriptionSubContainer_content{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+
     transform-style: preserve-3d;
     backface-visibility: hidden;
 }
-.descriptionSubContainer_content_about{
+.descriptionSubContainer_content h2{}
+.descriptionSubContainer_content p{}
+.descriptionSubContainer_tech{
     display: flex;
 }
-.descriptionSubContainer_content_tech{
-    display: flex;
-}
-.techNames{
-    display: flex;
-}
-.techLogos{
+.tech{
     display: flex;
 }
 /* ------------------------------------- footer --------------------------------------- */
