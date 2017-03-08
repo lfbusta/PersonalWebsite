@@ -60,7 +60,7 @@ const data = [
         ]
     },
     {
-        title: "",
+        title: "Cloud10",
         screenshot: "resources/ss01.png",
         link: "https://cmclaudet.github.io/Cloud10/",
         aboutShort: "Cloud10 is a small game developed for a Game Jam. I made a site for it as part of my learning process. This is the first complete webpage I ever made.",
@@ -75,22 +75,19 @@ const data = [
 
 class Project extends React.Component{
     renderTech(){
-        let techList = [];
-        let tech = "";
-        for(let i=0; i<this.props.data.technologies.length; i++){
-            tech = this.props.data.technologies[i]
-            techList.push(<p key={tech}>{tech}</p>);
-        }
-        return techList;
-    }
-    renderTechLogos(){
         let techLogoList = [];
         let tech = "";
         let logo = "";
         for(let i=0; i<this.props.data.technologies.length; i++){
             tech = this.props.data.technologies[i];
             logo = `resources/logo_${tech.toLowerCase()}.png`;
-            techLogoList.push(<img key={`${tech.toLocaleLowerCase()}Logo`} src={logo} alt={`${tech} Logo`} />);
+            techLogoList.push(
+                <div className="tech" key={tech.toLowerCase()}>
+                    <img className="techLogo" src={logo} alt={`${tech} Logo`} />
+                    <p className="techName">{tech}</p>
+                </div>
+
+            );
         }
         return techLogoList;
     }
@@ -102,22 +99,13 @@ class Project extends React.Component{
                 </div>
                 <div className="descriptionContainer">
                     <div className="descriptionSubContainer">
-                        <div className="descriptionSubContainer_title">
-                            <h2>{this.props.data.title}</h2>
-                        </div>
                         <div className="descriptionSubContainer_content">
-                            <div className="descriptionSubContainer_content_about">
-                                <p className="aboutShort">{this.props.data.aboutShort}</p>
-                                <p className="aboutLong">{this.props.data.aboutLong}</p>
-                            </div>
-                            <div className="descriptionSubContainer_content_tech">
-                                <div className="techNames">
-                                    { this.renderTech() }
-                                </div>
-                                <div className="techLogos">
-                                    { this.renderTechLogos() }
-                                </div>
-                            </div>
+                            <h2>{this.props.data.title}</h2>
+                            <p className="aboutShort">{this.props.data.aboutShort}</p>
+                            <p className="aboutLong">{this.props.data.aboutLong}</p>
+                        </div>
+                        <div className="descriptionSubContainer_tech">
+                            { this.renderTech() }
                         </div>
                     </div>
                 </div>
