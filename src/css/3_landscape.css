@@ -4,9 +4,7 @@
     /* ==================================================================================== */
     /**{ background-color: rgba(0,0,0,0.25); }*/
     html{}
-    header{
-        height:20vh;
-    }
+    header{}
     nav{}
     body{}
     h1{}
@@ -43,6 +41,9 @@
         /*filter: contrast(75%);*/
         filter: saturate(75%) contrast(75%);
         transition: filter 0.1s ease-in;
+    }
+    .spacerMenu{
+        height:20vh;
     }
     /* ------------------------------------ section 2 ------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -91,9 +92,9 @@
         padding: 0 3% 4% 3%;
     }
     .tech{
-        align-items: center;
-        filter: grayscale(100);
-        transition: filter 0.1s ease-in-out;
+        align-items: flex-end;
+        filter: grayscale(100%);
+        transition: filter 0.2s ease 0.4s;
     }
     .techLogo{
         height: 3vh;
@@ -175,6 +176,9 @@
     }
     .tech:hover{
         filter:grayscale(0);
+        font-weight: bold;
+
+        transition: filter 0.2s ease 0s;
         /*height: 5vh;*/
 
     }
