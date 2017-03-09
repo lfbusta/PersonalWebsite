@@ -158,12 +158,14 @@ footer{
     backface-visibility: hidden;
 }
 .descriptionSubContainer_content h2{}
-.descriptionSubContainer_content p{}
+.descriptionSubContainer_content p{ backface-visibility: hidden; }
 .descriptionSubContainer_tech{
     display: flex;
 }
 .tech{
     display: flex;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 /* ------------------------------------- footer --------------------------------------- */
 /* ------------------------------------------------------------------------------------ */

@@ -92,9 +92,9 @@
         padding: 0 3% 4% 3%;
     }
     .tech{
-        align-items: center;
-        filter: grayscale(100);
-        transition: filter 0.1s ease-in-out;
+        align-items: flex-end;
+        filter: grayscale(100%);
+        transition: filter 0.2s ease 0.4s;
     }
     .techLogo{
         height: 3vh;
@@ -176,6 +176,9 @@
     }
     .tech:hover{
         filter:grayscale(0);
+        font-weight: bold;
+
+        transition: filter 0.2s ease 0s;
         /*height: 5vh;*/
 
     }
