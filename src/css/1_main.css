@@ -34,19 +34,14 @@ html{
     background-color: var(--color-background1);
     overflow-x: hidden;
 }
-header{
-    display: flex;
-    width: 100%;
-    z-index: 2;
-    background-color: var(--color-background2);
-    box-shadow: 0 1vmin 5vmin var(--color-shadow);
-}
+header{}
 nav{}
 body{
     display: flex;
     flex-direction: column;
     width: 100vw;
     overflow-x: hidden;
+    /*opacity: 0;*/
 }
 h1{}
 h2{}
@@ -85,9 +80,16 @@ footer{
 /* ------------------------------------------------------------------------------------ */
 
 /*.................................... subsection 1 ....................................*/
-.spacerMenu{}
+.spacerMenu{
+    display: flex;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--color-background2);
+    box-shadow: 0 1vmin 5vmin var(--color-shadow);
+}
 .containerMenu{
-    position:fixed;
+    position:relative;
     display: flex;
 }
 .buttonMenu{
@@ -114,6 +116,7 @@ footer{
     /*padding: 2.5vh 0 2.5vh 0;*/
 }
 .horContainer1{
+    z-index: 1;
     background-color: transparent;
 }
 .horContainer2{
@@ -140,8 +143,6 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*overflow: scroll;*/
-    /*background-color: red;*/
 }
 .descriptionSubContainer{
     position: relative;
@@ -198,13 +199,16 @@ footer{
     justify-content: center;
 }
 #react_menu{
+    position: fixed;
+    width: 100vw;
     z-index: 10;
+
+    /*background-color: red;*/
 }
 #react_content{}
 #react_footer{}
 #buttonMenu_blog{ filter: opacity(50%); }
 #buttonMenu_about{ filter: opacity(50%); }
-
 
 /* ================================== INTERACTIONS ==================================== */
 /* ==================================================================================== */

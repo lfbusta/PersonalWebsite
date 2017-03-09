@@ -131,6 +131,7 @@ class Projects extends React.Component{
     render(){
         return(
             <div className="containerContent">
+                <div className="spacerMenu"></div>
                 { this.renderProjects() }
             </div>
         );
