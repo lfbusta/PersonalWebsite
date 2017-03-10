@@ -5,7 +5,7 @@ const data = [
     {
         title: "Shardcraft",
         screenshot: "resources/ss05.png",
-        link: "",
+        link: "https://shard.cl",
         aboutShort: "Shardcraft is a small Minecraft server that I’ve been hosting with a friend for almost 5 years now. This interactive page will include a login for admins and players to interact directly with in-game content.",
         aboutLong: "Shardcraft is a small private whitelisted vanilla Minecraft server that I’ve been hosting with a friend for almost 5 years now. It started as my personal single player world but has now grown large enough that it would benefit from its own webpage. This interactive page will include a login for admins and players to get information and interact directly with in-game content through javascript and python scripts.",
         technologies: [
@@ -28,8 +28,10 @@ const data = [
             "HTML",
             "CSS",
             "JS",
+            "React",
             "NPM",
             "Gulp",
+            "Webpack",
             "Firebase"
         ]
     },
@@ -110,6 +112,7 @@ class Project extends React.Component{
                     </div>
                 </div>
                 <div className="frontScreen">
+                    <a href={this.props.data.link}>Visit Site</a>
                 </div>
             </div>
         );
