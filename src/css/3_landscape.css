@@ -19,10 +19,8 @@
     /* ===================================== CLASSES ====================================== */
     /* ==================================================================================== */
 
-    /* ------------------------------------ section 1 ------------------------------------- */
+    /* --------------------------------------- menu --------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
-
-    /*.................................... subsection 1 ....................................*/
     .containerMenu{
         flex-direction: column;
         align-items: flex-start;
@@ -37,6 +35,15 @@
         width: 50vh;
         height: 50vh;
     }
+    .buttonMenu{
+        width: 5vh;
+        height: 5vh;
+        margin: 5vh 5vh 5vh 5vh;
+        left: 2.5vh;
+        top: 2.5vh;
+        opacity: 0;
+        /*box-shadow: none;*/
+    }
     .buttonMenu_main{
         /*filter: contrast(75%);*/
         filter: saturate(75%) contrast(75%);
@@ -45,7 +52,8 @@
     .spacerMenu{
         height:20vh;
     }
-    /* ------------------------------------ section 2 ------------------------------------- */
+
+    /* ------------------------------------- content -------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
     .horContainer{
         justify-content: flex-start;
@@ -57,6 +65,7 @@
         flex-direction: row-reverse;
     }
 
+    /*....................................... about ........................................*/
     .descriptionContainer{
         flex: 1;
         height: 100%;
@@ -71,7 +80,6 @@
     .horContainer2 .descriptionSubContainer{
         flex-direction: row;
     }
-
     .descriptionSubContainer_content{
         padding: 0 3% 4% 3%;
     }
@@ -85,7 +93,6 @@
     .aboutShort{
         display: none;
     }
-
     .descriptionSubContainer_tech{
         flex-direction: column;
         justify-content: flex-end;
@@ -122,6 +129,8 @@
         margin-right: auto;
         padding-right: 2vh;
     }
+
+    /*..................................... screenshots .....................................*/
     .screenshotContainer{
         height: 40vh;
         width: 64vh;
@@ -134,10 +143,10 @@
         height: 41vh;
     }
 
+    /*..................................... frontScreen .....................................*/
     .frontScreen{
         display: none;
     }
-    /*.................................... subsection 1 ....................................*/
 
     /* ------------------------------------- footer --------------------------------------- */
     /* ------------------------------------------------------------------------------------ */
@@ -154,6 +163,7 @@
     .contactIcons img{
         height: 5vh;
     }
+
     /* ======================================= IDs ======================================== */
     /* ==================================================================================== */
     #root{
@@ -199,12 +209,14 @@
             height: 15vh;
             margin: 0 0 0 0;
             opacity: 1;
+            box-shadow: none;
         }
         75%{
             width: 15vh;
             height: 15vh;
             margin: 0 0 0 0;
             opacity: 1;
+            box-shadow: none;
         }
         100%{
             width: 10vh;
@@ -225,12 +237,14 @@
             height: 15vh;
             margin: 0 0 0 0;
             opacity: 1;
+            box-shadow: none;
         }
         75%{
             width: 15vh;
             height: 15vh;
             margin: 0 0 0 0;
             opacity: 1;
+            box-shadow: none;
         }
         100%{
             width: 10vh;
@@ -541,6 +555,7 @@
         margin: 2.5vh 2.5vh 2.5vh 2.5vh;
         left: 27.5vh;
         top: 2.5vh;
+        opacity: 1;
 
         animation-name: shrink_buttonMenu, hide_buttonMenu_projects;
         animation-duration: 1s,1s;
@@ -567,6 +582,7 @@
         margin: 2.5vh 2.5vh 2.5vh 2.5vh;
         left: 24vh;
         top: 15vh;
+        opacity: 1;
 
         animation-name: shrink_buttonMenu, hide_buttonMenu_blog;
         animation-duration: 1s,1s;
@@ -593,6 +609,7 @@
         margin: 2.5vh 2.5vh 2.5vh 2.5vh;
         left: 15vh;
         top: 24vh;
+        opacity: 1;
 
         animation-name: shrink_buttonMenu, hide_buttonMenu_about;
         animation-duration: 1s,1s;
@@ -619,6 +636,7 @@
         margin: 2.5vh 2.5vh 2.5vh 2.5vh;
         left: 2.5vh;
         top: 27.5vh;
+        opacity: 1;
 
         animation-name: shrink_buttonMenu, hide_buttonMenu_connect;
         animation-duration: 1s,1s;

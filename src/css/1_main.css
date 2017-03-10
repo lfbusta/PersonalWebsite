@@ -185,6 +185,7 @@ footer{
     visibility: hidden;
 }
 .removed{
+    opacity: 0;
     display: none;
 }
 .blured{
