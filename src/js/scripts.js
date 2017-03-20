@@ -1,7 +1,8 @@
 import ScrollReveal from "scrollreveal";
-import "./menu";
-import "./content";
-import "./footer";
+import "./index.jsx";
+import "./menu.jsx";
+import "./content.jsx";
+import "./footer.jsx";
 
 // ===================================== EXAMPLES =======================================
 // ======================================================================================
