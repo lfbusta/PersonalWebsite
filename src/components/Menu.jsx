@@ -8,18 +8,15 @@ class Button extends React.Component{
         );
     }
 }
-
-class Menu extends React.Component{
+export class Menu extends React.Component{
     render(){
         return(
             <nav className="containerMenu">
                 <Button link="public" cssClasses="buttonMenu buttonMenu_main animation__show_buttonMenu_projects" id="buttonMenu_projects" image="../resources/buttonProjects.svg"/>
                 <Button link="about" cssClasses="buttonMenu buttonMenu_main animation__show_buttonMenu_about" id="buttonMenu_about" image="../resources/buttonAbout.svg"/>
                 <Button link="connect" cssClasses="buttonMenu buttonMenu_main animation__show_buttonMenu_connect" id="buttonMenu_connect" image="../resources/buttonConnect.svg"/>
-                <Button link="#" cssClasses="buttonMenu buttonMenu_main animation__hide_buttonMenu_stack" id="buttonMenu_stack" image="../resources/buttonStack.svg"/>
+                <img className="buttonMenu buttonMenu_main animation__hide_buttonMenu_stack" id="buttonMenu_stack" src="../resources/buttonStack.svg" alt=""/>
             </nav>
         );
     }
 }
-
-ReactDOM.render( <Menu/>, document.getElementById("react_menu") );
