@@ -421,18 +421,18 @@
     }
     @keyframes hide_buttonMenu_about {
         0%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2vh;
+            top: 20.2vh;
             opacity: 1;
         }
         25%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2vh;
+            top: 20.2vh;
             opacity: 1;
         }
         50%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2vh;
+            top: 20.2vh;
             opacity: 1;
         }
         75%{
@@ -458,18 +458,18 @@
             opacity: 0;
         }
         50%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2;
+            top: 20.2;
             opacity: 1;
         }
         75%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2;
+            top: 20.2;
             opacity: 1;
         }
         100%{
-            left: 15vh;
-            top: 24vh;
+            left: 20.2vh;
+            top: 20.2vh;
             opacity: 1;
         }
     }
@@ -604,14 +604,14 @@
         width: 10vh;
         height: 10vh;
         margin: 2.5vh 2.5vh 2.5vh 2.5vh;
-        left: 15vh;
-        top: 24vh;
+        left: 20.2vh;
+        top: 20.2vh;
         opacity: 1;
 
         animation-name: shrink_buttonMenu, hide_buttonMenu_about;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0.2s,0.2s;
+        animation-delay: 0.15s,0.15s;
         animation-direction: normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
@@ -622,7 +622,7 @@
         animation-name: expand_buttonMenu, show_buttonMenu_about;
         animation-duration: 1s,1s;
         animation-timing-function: ease,ease;
-        animation-delay: 0.2s,0.2s;
+        animation-delay: 0.15s,0.15s;
         animation-direction:normal,normal;
         animation-iteration-count: 1,1;
         animation-fill-mode: forwards,forwards;
