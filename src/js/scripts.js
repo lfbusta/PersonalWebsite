@@ -1,8 +1,5 @@
 import ScrollReveal from "scrollreveal";
-import "./index.jsx";
-import "./menu.jsx";
-import "./content.jsx";
-import "./footer.jsx";
+import "../components/index.jsx";
 
 // ===================================== EXAMPLES =======================================
 // ======================================================================================
@@ -24,7 +21,7 @@ function test(){ console.log("Test Function"); }
 let menuShow = true;
 let mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
 const body = document.getElementsByTagName("body")[0];
-const header = document.getElementsByTagName("header")[0];
+const header = document.getElementsByTagName("nav")[0];
 
 const containerMenu = document.getElementsByClassName("containerMenu")[0];
 const buttonMenu = document.getElementsByClassName("buttonMenu");

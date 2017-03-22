@@ -88,7 +88,6 @@ class Project extends React.Component{
                     <img className="techLogo" src={logo} alt={`${tech} Logo`} />
                     <p className="techName">{tech}</p>
                 </div>
-
             );
         }
         return techLogoList;
@@ -118,8 +117,7 @@ class Project extends React.Component{
         );
     }
 }
-
-class Projects extends React.Component{
+export class Projects extends React.Component{
     renderProjects(){
         let projects = [];
         for(let i=0; i<data.length;i++){
@@ -140,5 +138,3 @@ class Projects extends React.Component{
         );
     }
 }
-
-ReactDOM.render( <Projects/>, document.getElementById('react_content') );
