@@ -89,8 +89,9 @@ footer{
     box-shadow: 0 1vmin 5vmin var(--color-shadow);
 }
 .containerMenu{
-    position:relative;
+    position:fixed;
     display: flex;
+    z-index:100;
 }
 .buttonMenu{
     position: absolute;
@@ -200,6 +201,7 @@ footer{
 #root{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 #react_menu{
     position: fixed;
