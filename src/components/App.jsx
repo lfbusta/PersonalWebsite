@@ -13,8 +13,16 @@ export default class App extends React.Component{
             content: "projects"
         };
     }
+    hasClass(element, cls) {
+        return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
+    }
+    replaceClass(classList,className1,className2){
+        // This function will replace className1 with className2
+        classList.add(className2);
+        classList.remove(className1);
+    }
     renderContent(e){
-        if(this.state.content === "projects"){ return(<Projects/>); }
+        if(this.state.content === "projects"){ return(<Projects onButtonClick={this.hasClass}/>); }
         else if(this.state.content === "about"){ console.log("About"); }
         else if(this.state.content === "connect"){ console.log("Connect"); }
         else{
@@ -28,6 +36,7 @@ export default class App extends React.Component{
             this.setState({content: newContent});
         }
     }
+
     render(){
         return(
             <div className="containerAll">

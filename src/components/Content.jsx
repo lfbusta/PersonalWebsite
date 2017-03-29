@@ -76,11 +76,19 @@ const data = [
 ]
 
 class Project extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+
+        this.state={
+            descriptionIsVisible: false
+        };
+    }
     renderTech(){
         let techLogoList = [];
         let tech = "";
         let logo = "";
-        for(let i=0; i<this.props.data.technologies.length; i++){
+        for (let i = 0; i < this.props.data.technologies.length; i++) {
             tech = this.props.data.technologies[i];
             logo = `../resources/logo_${tech.toLowerCase()}.png`;
             techLogoList.push(
@@ -92,9 +100,39 @@ class Project extends React.Component{
         }
         return techLogoList;
     }
+    handleClick(e){
+        console.log(e.target);
+        let screenshot = e.target.parentNode.getElementsByClassName("imgScreenshot")[0];
+        let description = e.target.parentNode.getElementsByClassName("descriptionContainer")[0];
+        let frontScreen = e.target;
+        if(this.props.onButtonClick(frontScreen,"descriptionShow")){
+
+            screenshot.classList.add("animation__show_screnshot");
+            screenshot.classList.remove("animation__hide_screnshot");
+
+            description.classList.add("animation__hide_description");
+            description.classList.remove("animation__show_description");
+
+            frontScreen.classList.add("animation__hide_description");
+            frontScreen.classList.remove("animation__show_description");
+            frontScreen.classList.remove("descriptionShow");
+
+        }
+        else {
+            screenshot.classList.add("animation__hide_screnshot");
+            screenshot.classList.remove("animation__show_screnshot");
+
+            description.classList.add("animation__show_description");
+            description.classList.remove("animation__hide_description");
+
+            frontScreen.classList.add("animation__show_description");
+            frontScreen.classList.remove("animation__hide_description");
+            frontScreen.classList.add("descriptionShow");
+        }
+    }
     render(){
         return (
-            <div className={`horContainer horContainer${this.props.container}`}>
+            <div className={`horContainer horContainer${this.props.container}`} onClick={this.handleClick}>
                 <div className="screenshotContainer">
                     <a href={this.props.data.link} target="_blank"><img src={this.props.data.screenshot} alt="" className="imgScreenshot"/></a>
                 </div>
@@ -117,18 +155,20 @@ class Project extends React.Component{
         );
     }
 }
+
 export class Projects extends React.Component{
     renderProjects(){
         let projects = [];
         for(let i=0; i<data.length;i++){
             if(i%2 === 0){
-                projects.push( <Project key={`project${i}`} data={data[i]} container="1"/> );
+                projects.push( <Project key={`project${i}`} data={data[i]} container="1" onButtonClick={this.props.onButtonClick}/> );
             } else{
-                projects.push( <Project key={`project${i}`} data={data[i]} container="2"/> );
+                projects.push( <Project key={`project${i}`} data={data[i]} container="2" onButtonClick={this.props.onButtonClick}/> );
             }
         }
         return projects;
     }
+    componentDidMount (){}
     render(){
         return(
             <div className="containerContent">
