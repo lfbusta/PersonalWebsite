@@ -39,4 +39,8 @@ export default class App extends React.Component{
             </div>
         );
     }
+    componentDidMount(){
+        const body = document.getElementsByTagName("body")[0];
+        this.replaceClass(body.classList,"removed","animation__fadePage");
+    }
 }

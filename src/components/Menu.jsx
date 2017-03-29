@@ -18,6 +18,8 @@ export class Menu extends React.Component{
         this.handleClick = this.handleClick.bind(this);
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
+        this.handleMediaQueryChange = this.handleMediaQueryChange.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
 
         this.state={
             visible: false
@@ -58,6 +60,18 @@ export class Menu extends React.Component{
             }
         }
         this.setState({visible: true})
+    }
+    toggleMenu(){
+        const isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" );
+        const body = document.getElementsByTagName("body")[0];
+        const header = document.getElementsByTagName("nav")[0];
+        if(body.scrollTop < 0.75*header.scrollHeight){
+            if(!this.state.visible && isPortrait){
+                this.showMenu();
+            }
+        } else if(this.state.visible){
+            this.hideMenu();
+        }
     }
     overrideToggleMenu(){
         if(this.state.visible){
@@ -108,6 +122,12 @@ export class Menu extends React.Component{
         }
 
     }
+    handleMediaQueryChange(e){
+        location.reload();
+    }
+    handleScroll(e){
+        this.toggleMenu()
+    }
 
     render(){
         return(
@@ -118,5 +138,10 @@ export class Menu extends React.Component{
                 <Button cssClasses="buttonMenu buttonMenu_main animation__hide_buttonMenu_stack" id="buttonMenu_stack" image="../resources/buttonStack.svg" handleMouseEnter={this.handleMouseEnter}/>
             </nav>
         );
+    }
+    componentDidMount(){
+        let isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" );
+        isPortrait.addListener(this.handleMediaQueryChange);
+        document.addEventListener("scroll", this.handleScroll, false);
     }
 }
