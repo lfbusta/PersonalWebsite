@@ -18,7 +18,8 @@ function test(){ console.log("Test Function"); }
 // ==================================== VARIABLES =======================================
 // ======================================================================================
 let menuShow = true;
-let isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" ).matches;
+let mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
+let isPortrait = mq.matches;
 const body = document.getElementsByTagName("body")[0];
 const header = document.getElementsByTagName("nav")[0];
 
@@ -97,13 +98,13 @@ function listener_pageReload(){
 
 document.addEventListener("scroll", listener_toggleMenu, false);
 
-buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false);
-if(!isPortrait){
-    buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
-    containerMenu.addEventListener("mouseleave", hideMenu, false);
-}
+// buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false);
+// if(!isPortrait){
+    // buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
+    // containerMenu.addEventListener("mouseleave", hideMenu, false);
+// }
 
-// mq.addListener(listener_pageReload);
+mq.addListener(listener_pageReload);
 // ===================================== ONLOAD =========================================
 // ======================================================================================
 

@@ -130,13 +130,10 @@ class Project extends React.Component{
             }
         }
     }
-    handleMouseOver(e){
-        console.log(`Mouse Over: ${e.target}`);
-    }
     render(){
         return (
             <div className={`horContainer horContainer${this.props.container}`} onClick={this.handleClick}>
-                <div className="screenshotContainer" onMouseOver={this.handleMouseOver}>
+                <div className="screenshotContainer">
                     <a href={this.props.data.link} target="_blank"><img src={this.props.data.screenshot} alt="" className="imgScreenshot"/></a>
                 </div>
                 <div className="descriptionContainer">
@@ -192,7 +189,10 @@ class About extends React.Component{
     }
     render(){
         return(
-            <h1>About</h1>
+            <div className="containerContent">
+                <div className="spacerMenu"></div>
+                <h1>About</h1>
+            </div>
         );
     }
     componentDidMount(){
@@ -206,7 +206,10 @@ class Connect extends React.Component{
     }
     render(){
         return(
-            <h1>Connect</h1>
+            <div className="containerContent">
+                <div className="spacerMenu"></div>
+                <h1>Connect</h1>
+            </div>
         );
     }
     componentDidMount(){
@@ -219,7 +222,7 @@ export class Content extends React.Component{
         super(props);
     }
     loadContent(){
-        let isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" ).matches;
+        const isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" ).matches;
         if(isPortrait){
             window.sr = ScrollReveal({ distance: "0", opacity: 0.5, origin: "left", reset: true, scale: 1, viewFactor: 1.2 });
             sr.reveal(".horContainer");
