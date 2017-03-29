@@ -1,4 +1,3 @@
-import ScrollReveal from "scrollreveal";
 import "../components/index.jsx";
 
 // ===================================== EXAMPLES =======================================
@@ -19,7 +18,7 @@ function test(){ console.log("Test Function"); }
 // ==================================== VARIABLES =======================================
 // ======================================================================================
 let menuShow = true;
-let mq = window.matchMedia( "(max-aspect-ratio: 1/1)" );
+let isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" ).matches;
 const body = document.getElementsByTagName("body")[0];
 const header = document.getElementsByTagName("nav")[0];
 
@@ -33,37 +32,6 @@ const frontScreens = document.getElementsByClassName("frontScreen");
 
 // ===================================== EXTRAS =========================================
 // ======================================================================================
-
-// if(mq.matches){
-//     window.sr = ScrollReveal({ distance: "0", opacity: 0.5, origin: "left", reset: true, scale: 1, viewFactor: 1.2 });
-//     sr.reveal(".horContainer");
-// } else{
-//     const common = {
-//         distance: "40vw",
-//         duration: 1000,
-//         delay: 0,
-//         opacity: 0,
-//         scale: 1,
-//         reset: true,
-//         viewFactor: 0.1
-//     }
-//     window.sr = ScrollReveal(common);
-//
-//     const horContainer1s = document.getElementsByClassName("horContainer1");
-//     const horContainer2s = document.getElementsByClassName("horContainer2");
-//     for(let i=0; i<horContainer1s.length; i++){
-//         horContainer1s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromLeft");
-//         horContainer1s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromRight");
-//     }
-//     for(let i=0; i<horContainer2s.length; i++){
-//         horContainer2s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromRight");
-//         horContainer2s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromLeft");
-//     }
-//     sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
-//     sr.reveal(".slideSecondFromRight", { origin: "right", delay: 250 });
-//     sr.reveal(".slideFirstFromRight", { origin: "right", delay: 0 });
-//     sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 250 });
-// }
 
 // ==================================== FUNCTIONS =======================================
 // ======================================================================================
@@ -105,7 +73,7 @@ function showMenu(){
 }
 function listener_toggleMenu(){
     if(body.scrollTop < 0.75*header.scrollHeight){
-        if(!menuShow && mq.matches){
+        if(!menuShow && isPortrait){
             showMenu();
         }
     } else if(menuShow){
@@ -130,12 +98,12 @@ function listener_pageReload(){
 document.addEventListener("scroll", listener_toggleMenu, false);
 
 buttonMenu_stack.addEventListener("click", listener_overrideToggleMenu, false);
-if(!mq.matches){
+if(!isPortrait){
     buttonMenu_stack.addEventListener("mouseover", listener_overrideToggleMenu, false);
     containerMenu.addEventListener("mouseleave", hideMenu, false);
 }
 
-mq.addListener(listener_pageReload);
+// mq.addListener(listener_pageReload);
 // ===================================== ONLOAD =========================================
 // ======================================================================================
 

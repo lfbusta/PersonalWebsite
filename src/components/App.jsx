@@ -13,6 +13,7 @@ export default class App extends React.Component{
             content: "projects"
         };
     }
+
     hasClass(element, cls) {
         return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
     }
@@ -21,6 +22,7 @@ export default class App extends React.Component{
         classList.add(className2);
         classList.remove(className1);
     }
+
     renderContent(e){
         if(this.state.content === "projects"){ return(<Projects onButtonClick={this.hasClass}/>); }
         else if(this.state.content === "about"){ console.log("About"); }

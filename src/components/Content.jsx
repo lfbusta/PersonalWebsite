@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import ScrollReveal from "scrollreveal";
+
 const data = [
     {
         title: "Shardcraft",
@@ -155,11 +157,10 @@ class Project extends React.Component{
         );
     }
 }
-
 export class Projects extends React.Component{
     renderProjects(){
         let projects = [];
-        for(let i=0; i<data.length;i++){
+        for(let i = 0; i < data.length; i++){
             if(i%2 === 0){
                 projects.push( <Project key={`project${i}`} data={data[i]} container="1" onButtonClick={this.props.onButtonClick}/> );
             } else{
@@ -168,7 +169,41 @@ export class Projects extends React.Component{
         }
         return projects;
     }
-    componentDidMount (){}
+
+    componentDidMount (){
+        let isPortrait = window.matchMedia( "(max-aspect-ratio: 1/1)" ).matches;
+        if(isPortrait){
+            window.sr = ScrollReveal({ distance: "0", opacity: 0.5, origin: "left", reset: true, scale: 1, viewFactor: 1.2 });
+            sr.reveal(".horContainer");
+        } else{
+            const common = {
+                distance: "40vw",
+                duration: 1000,
+                delay: 0,
+                opacity: 0,
+                scale: 1,
+                reset: true,
+                viewFactor: 0.1
+            }
+            window.sr = ScrollReveal(common);
+
+            const horContainer1s = document.getElementsByClassName("horContainer1");
+            const horContainer2s = document.getElementsByClassName("horContainer2");
+            for(let i = 0; i < horContainer1s.length; i++){
+                horContainer1s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromLeft");
+                horContainer1s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromRight");
+            }
+            for(let i = 0; i < horContainer2s.length; i++){
+                horContainer2s[i].getElementsByClassName("screenshotContainer")[0].classList.add("slideFirstFromRight");
+                horContainer2s[i].getElementsByClassName("descriptionContainer")[0].classList.add("slideSecondFromLeft");
+            }
+            sr.reveal(".slideFirstFromLeft", { origin: "left", delay: 0 });
+            sr.reveal(".slideSecondFromRight", { origin: "right", delay: 250 });
+            sr.reveal(".slideFirstFromRight", { origin: "right", delay: 0 });
+            sr.reveal(".slideSecondFromLeft", { origin: "left", delay: 250 });
+        }
+    }
+
     render(){
         return(
             <div className="containerContent">
@@ -176,5 +211,10 @@ export class Projects extends React.Component{
                 { this.renderProjects() }
             </div>
         );
+    }
+}
+export class Content extends React.Component{
+    render(){
+        return;
     }
 }
